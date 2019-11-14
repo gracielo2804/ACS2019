@@ -1,0 +1,78 @@
+F:\Ndogg\Proyek ACS\Proyek ACS\bin\Debug\Proyek ACS.exe.config
+F:\Ndogg\Proyek ACS\Proyek ACS\bin\Debug\Proyek ACS.exe
+F:\Ndogg\Proyek ACS\Proyek ACS\bin\Debug\Proyek ACS.pdb
+F:\Ndogg\Proyek ACS\Proyek ACS\obj\Debug\Proyek ACS.csprojAssemblyReference.cache
+F:\Ndogg\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Form1.resources
+F:\Ndogg\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Form2.resources
+F:\Ndogg\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Properties.Resources.resources
+F:\Ndogg\Proyek ACS\Proyek ACS\obj\Debug\Proyek ACS.csproj.GenerateResource.cache
+F:\Ndogg\Proyek ACS\Proyek ACS\obj\Debug\Proyek ACS.csproj.CoreCompileInputs.cache
+F:\Ndogg\Proyek ACS\Proyek ACS\obj\Debug\Proyek ACS.exe
+F:\Ndogg\Proyek ACS\Proyek ACS\obj\Debug\Proyek ACS.pdb
+F:\Ndogg\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Inventory.resources
+F:\Ndogg\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Master_Login.resources
+F:\Ndogg\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.New.resources
+F:\Ndogg\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Report.resources
+F:\Ndogg\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Update.resources
+F:\PROYEK\Proyek ACS\Proyek ACS\bin\Debug\Proyek ACS.exe.config
+F:\PROYEK\Proyek ACS\Proyek ACS\bin\Debug\Proyek ACS.exe
+F:\PROYEK\Proyek ACS\Proyek ACS\bin\Debug\Proyek ACS.pdb
+F:\PROYEK\Proyek ACS\Proyek ACS\obj\Debug\Proyek ACS.csprojAssemblyReference.cache
+F:\PROYEK\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.add_contact.resources
+F:\PROYEK\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.awal.resources
+F:\PROYEK\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.EditContact.resources
+F:\PROYEK\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Form1.resources
+F:\PROYEK\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Form2.resources
+F:\PROYEK\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Inventory.resources
+F:\PROYEK\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Master_Login.resources
+F:\PROYEK\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.New.resources
+F:\PROYEK\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Properties.Resources.resources
+F:\PROYEK\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Report.resources
+F:\PROYEK\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.SignUp.resources
+F:\PROYEK\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Update.resources
+F:\PROYEK\Proyek ACS\Proyek ACS\obj\Debug\Proyek ACS.csproj.GenerateResource.cache
+F:\PROYEK\Proyek ACS\Proyek ACS\obj\Debug\Proyek ACS.csproj.CoreCompileInputs.cache
+F:\PROYEK\Proyek ACS\Proyek ACS\obj\Debug\Proyek ACS.exe
+F:\PROYEK\Proyek ACS\Proyek ACS\obj\Debug\Proyek ACS.pdb
+D:\KULIAH\MATERI KULIAH\SEMESTER 3\APLIKASI CLIENT SERVER\Project ACS\Proyek ACS\Proyek ACS\bin\Debug\Proyek ACS.exe.config
+D:\KULIAH\MATERI KULIAH\SEMESTER 3\APLIKASI CLIENT SERVER\Project ACS\Proyek ACS\Proyek ACS\bin\Debug\Proyek ACS.exe
+D:\KULIAH\MATERI KULIAH\SEMESTER 3\APLIKASI CLIENT SERVER\Project ACS\Proyek ACS\Proyek ACS\bin\Debug\Proyek ACS.pdb
+D:\KULIAH\MATERI KULIAH\SEMESTER 3\APLIKASI CLIENT SERVER\Project ACS\Proyek ACS\Proyek ACS\bin\Debug\Oracle.DataAccess.dll
+D:\KULIAH\MATERI KULIAH\SEMESTER 3\APLIKASI CLIENT SERVER\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek ACS.csprojAssemblyReference.cache
+D:\KULIAH\MATERI KULIAH\SEMESTER 3\APLIKASI CLIENT SERVER\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.add_contact.resources
+D:\KULIAH\MATERI KULIAH\SEMESTER 3\APLIKASI CLIENT SERVER\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.awal.resources
+D:\KULIAH\MATERI KULIAH\SEMESTER 3\APLIKASI CLIENT SERVER\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.EditContact.resources
+D:\KULIAH\MATERI KULIAH\SEMESTER 3\APLIKASI CLIENT SERVER\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Form2.resources
+D:\KULIAH\MATERI KULIAH\SEMESTER 3\APLIKASI CLIENT SERVER\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Inventory.resources
+D:\KULIAH\MATERI KULIAH\SEMESTER 3\APLIKASI CLIENT SERVER\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Master_Login.resources
+D:\KULIAH\MATERI KULIAH\SEMESTER 3\APLIKASI CLIENT SERVER\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.New.resources
+D:\KULIAH\MATERI KULIAH\SEMESTER 3\APLIKASI CLIENT SERVER\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Properties.Resources.resources
+D:\KULIAH\MATERI KULIAH\SEMESTER 3\APLIKASI CLIENT SERVER\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Report.resources
+D:\KULIAH\MATERI KULIAH\SEMESTER 3\APLIKASI CLIENT SERVER\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Update.resources
+D:\KULIAH\MATERI KULIAH\SEMESTER 3\APLIKASI CLIENT SERVER\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek ACS.csproj.GenerateResource.cache
+D:\KULIAH\MATERI KULIAH\SEMESTER 3\APLIKASI CLIENT SERVER\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek ACS.csproj.CoreCompileInputs.cache
+D:\KULIAH\MATERI KULIAH\SEMESTER 3\APLIKASI CLIENT SERVER\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek ACS.csproj.CopyComplete
+D:\KULIAH\MATERI KULIAH\SEMESTER 3\APLIKASI CLIENT SERVER\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek ACS.exe
+D:\KULIAH\MATERI KULIAH\SEMESTER 3\APLIKASI CLIENT SERVER\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek ACS.pdb
+D:\KULIAH\MATERI KULIAH\SEMESTER 3\APLIKASI CLIENT SERVER\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Pilih.resources
+E:\Kuliah\Semester 3\ACS\Proyek\Project ACS\Proyek ACS\Proyek ACS\bin\Debug\Proyek ACS.exe.config
+E:\Kuliah\Semester 3\ACS\Proyek\Project ACS\Proyek ACS\Proyek ACS\bin\Debug\Proyek ACS.exe
+E:\Kuliah\Semester 3\ACS\Proyek\Project ACS\Proyek ACS\Proyek ACS\bin\Debug\Proyek ACS.pdb
+E:\Kuliah\Semester 3\ACS\Proyek\Project ACS\Proyek ACS\Proyek ACS\bin\Debug\Oracle.DataAccess.dll
+E:\Kuliah\Semester 3\ACS\Proyek\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek ACS.csprojAssemblyReference.cache
+E:\Kuliah\Semester 3\ACS\Proyek\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.add_contact.resources
+E:\Kuliah\Semester 3\ACS\Proyek\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.awal.resources
+E:\Kuliah\Semester 3\ACS\Proyek\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.EditContact.resources
+E:\Kuliah\Semester 3\ACS\Proyek\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Form2.resources
+E:\Kuliah\Semester 3\ACS\Proyek\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Inventory.resources
+E:\Kuliah\Semester 3\ACS\Proyek\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Master_Login.resources
+E:\Kuliah\Semester 3\ACS\Proyek\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.New.resources
+E:\Kuliah\Semester 3\ACS\Proyek\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Properties.Resources.resources
+E:\Kuliah\Semester 3\ACS\Proyek\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Report.resources
+E:\Kuliah\Semester 3\ACS\Proyek\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Pilih.resources
+E:\Kuliah\Semester 3\ACS\Proyek\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Update.resources
+E:\Kuliah\Semester 3\ACS\Proyek\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek ACS.csproj.GenerateResource.cache
+E:\Kuliah\Semester 3\ACS\Proyek\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek ACS.csproj.CopyComplete
+E:\Kuliah\Semester 3\ACS\Proyek\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek ACS.exe
+E:\Kuliah\Semester 3\ACS\Proyek\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek ACS.pdb
+E:\Kuliah\Semester 3\ACS\Proyek\Project ACS\Proyek ACS\Proyek ACS\obj\Debug\Proyek_ACS.Edit_User.resources
