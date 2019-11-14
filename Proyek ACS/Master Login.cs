@@ -17,6 +17,7 @@ namespace Proyek_ACS
         OracleConnection conn = new OracleConnection("Data Source= xe;User ID=proyek;Password=proyek");
         OracleDataAdapter adapter;
         OracleCommand cmd;
+        string iduser;
         public Master_Login()
         {
             InitializeComponent();
@@ -51,11 +52,14 @@ namespace Proyek_ACS
         {
             if (e.RowIndex != -1)
             {
+                iduser = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                 if (DialogResult.Yes == MessageBox.Show( "Apakah Anda ingin mengeditnya?? ", "Confirmation", MessageBoxButtons.YesNo))
                 {
                     Edit_User eu = new Edit_User();
                     eu.form_mLogin = this;
-                    eu.Show();
+                    eu.lbl_id.Text= iduser;
+                    this.Hide();
+                    eu.ShowDialog();
                 }
             }
             

@@ -32,7 +32,7 @@
             this.btn_add = new System.Windows.Forms.Button();
             this.txt_nama = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lbl_id = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -84,15 +84,15 @@
             this.label2.TabIndex = 75;
             this.label2.Text = "Name  :";
             // 
-            // label11
+            // lbl_id
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(189, 93);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(67, 20);
-            this.label11.TabIndex = 74;
-            this.label11.Text = "label11";
+            this.lbl_id.AutoSize = true;
+            this.lbl_id.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_id.Location = new System.Drawing.Point(189, 93);
+            this.lbl_id.Name = "lbl_id";
+            this.lbl_id.Size = new System.Drawing.Size(67, 20);
+            this.lbl_id.TabIndex = 74;
+            this.lbl_id.Text = "label11";
             // 
             // label10
             // 
@@ -183,12 +183,13 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.lbl_id);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Name = "Edit_User";
             this.Text = "Edit_User";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Edit_User_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -201,7 +202,6 @@
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.TextBox txt_nama;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -210,5 +210,6 @@
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label lbl_id;
     }
 }

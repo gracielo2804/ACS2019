@@ -18,6 +18,7 @@ namespace Proyek_ACS
         public Pilih form_pilih;
         public int id_jabatan;
         OracleDataAdapter adapter;
+        
         public Inventory()
         {
             InitializeComponent();
@@ -67,7 +68,14 @@ namespace Proyek_ACS
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedIndex>-1)
+            {
+                adapter = new OracleDataAdapter("select st.id_sepatu as \"ID Sepatu\",s.nama_sepatu \"Nama Sepatu\" ,st.jumlah_sepatu as Jumlah,st.warna_sepatu as \"Warna Sepatu\" from stok st,sepatu s,cabang c where c.id_cabang=st.id_cabang and st.id_sepatu=s.id_sepatu and c.id_cabang='" + comboBox1.SelectedValue+"'", conn);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                dataGridView1.DataSource = ds.Tables[0];
 
+            }
         }
     }
 }

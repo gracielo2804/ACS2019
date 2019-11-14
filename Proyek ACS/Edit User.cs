@@ -21,7 +21,12 @@ namespace Proyek_ACS
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
+        }
+
+        private void Edit_User_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            form_mLogin.Show();
         }
     }
 }
