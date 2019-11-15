@@ -17,6 +17,7 @@ namespace Proyek_ACS
             InitializeComponent();
         }
         public string user;
+        string test;
         public int id_jabatan;
         public awal form_awal;        
 
@@ -47,6 +48,12 @@ namespace Proyek_ACS
             i.lbl_nama.Text = this.user;
             i.Show();
             this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Report r = new Report();
+            r.Show();
         }
     }
 }
