@@ -17,7 +17,6 @@ namespace Proyek_ACS
             InitializeComponent();
         }
         public string user;
-        string test;
         public int id_jabatan;
         public awal form_awal;        
 
