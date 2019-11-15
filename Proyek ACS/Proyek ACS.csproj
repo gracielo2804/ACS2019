@@ -56,11 +56,23 @@
     <Compile Include="add_contact.Designer.cs">
       <DependentUpon>add_contact.cs</DependentUpon>
     </Compile>
+    <Compile Include="Add_sub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_sub.Designer.cs">
+      <DependentUpon>Add_sub.cs</DependentUpon>
+    </Compile>
     <Compile Include="awal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="awal.Designer.cs">
       <DependentUpon>awal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Sub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit Sub.Designer.cs">
+      <DependentUpon>Edit Sub.cs</DependentUpon>
     </Compile>
     <Compile Include="Edit User.cs">
       <SubType>Form</SubType>
@@ -127,8 +139,14 @@
     <EmbeddedResource Include="add_contact.resx">
       <DependentUpon>add_contact.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Add_sub.resx">
+      <DependentUpon>Add_sub.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="awal.resx">
       <DependentUpon>awal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Sub.resx">
+      <DependentUpon>Edit Sub.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Edit User.resx">
       <DependentUpon>Edit User.cs</DependentUpon>
