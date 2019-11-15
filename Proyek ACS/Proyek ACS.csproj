@@ -112,6 +112,12 @@
     <Compile Include="Pilih.Designer.cs">
       <DependentUpon>Pilih.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sub_contact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sub_contact.Designer.cs">
+      <DependentUpon>Sub_contact.cs</DependentUpon>
+    </Compile>
     <Compile Include="Update.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pilih.resx">
       <DependentUpon>Pilih.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sub_contact.resx">
+      <DependentUpon>Sub_contact.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Update.resx">
       <DependentUpon>Update.cs</DependentUpon>

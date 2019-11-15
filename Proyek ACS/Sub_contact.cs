@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Proyek_ACS
 {
-    public partial class Form2 : Form
+    public partial class Sub_contact : Form
     {
-        public Form2()
+        public Sub_contact()
         {
             InitializeComponent();
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
