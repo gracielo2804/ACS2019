@@ -33,13 +33,13 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_nama = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lbl_cabang = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +66,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(712, 528);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // textBox1
             // 
@@ -96,22 +97,11 @@
             this.btn_add.Text = "New Product";
             this.btn_add.UseVisualStyleBackColor = false;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(24, 329);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 63);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Edit Product";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.AntiqueWhite;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(24, 439);
+            this.button2.Location = new System.Drawing.Point(24, 310);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(131, 63);
             this.button2.TabIndex = 6;
@@ -153,7 +143,7 @@
             this.pictureBox2.Image = global::Proyek_ACS.Properties.Resources.logo1;
             this.pictureBox2.Location = new System.Drawing.Point(12, 12);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(183, 94);
+            this.pictureBox2.Size = new System.Drawing.Size(169, 83);
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             // 
@@ -161,24 +151,34 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(232, 97);
+            this.comboBox1.Location = new System.Drawing.Point(259, 97);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 12;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // lbl_cabang
+            // 
+            this.lbl_cabang.AutoSize = true;
+            this.lbl_cabang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cabang.Location = new System.Drawing.Point(191, 100);
+            this.lbl_cabang.Name = "lbl_cabang";
+            this.lbl_cabang.Size = new System.Drawing.Size(65, 16);
+            this.lbl_cabang.TabIndex = 13;
+            this.lbl_cabang.Text = "Cabang : ";
             // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(929, 663);
+            this.Controls.Add(this.lbl_cabang);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.lbl_nama);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.textBox1);
@@ -201,12 +201,12 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.Button btn_add;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label lbl_nama;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lbl_cabang;
     }
 }

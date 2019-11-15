@@ -16,5 +16,10 @@ namespace Proyek_ACS
         {
             InitializeComponent();
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
