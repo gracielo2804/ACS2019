@@ -20,92 +20,61 @@ namespace Proyek_ACS
         }
         public string user = "";
         public static OracleConnection dbconn = new OracleConnection();
+        DataSet ds;
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            dbconn.Open();
             datalogin();
-            dbconn.Close();
-            int index = 0;
-            bool LOGuser = false, LOGpass = false;
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            bool cek = false;
+            foreach (DataTable table in ds.Tables)
             {
-                if (txt_uname.Text == dataGridView1.Rows[i].Cells[0].Value.ToString())
+                foreach (DataRow row in table.Rows)
                 {
-                    user = dataGridView1.Rows[i].Cells[1].Value.ToString();
-                    LOGuser = true;
-                    index = i;
-                    i = 99;
+                    if (row["name"].ToString()==txt_uname.Text && row["pass"].ToString()==txt_password.Text)
+                    {
+                        cek = true;
+                        MessageBox.Show("Berhasil Login");
+                        if (row["Jabatan"].ToString() == "3")
+                        {
+                            this.Hide();
+                            Pilih p = new Pilih();
+                            p.form_awal = this;
+                            p.id_jabatan = int.Parse(row["Jabatan"].ToString());
+                            p.user = this.user;
+                            p.Show();
+                        }
+                        else
+                        {
+                            this.Hide();
+                            Inventory i = new Inventory();
+                            i.id_jabatan = int.Parse(row["Jabatan"].ToString());
+                            i.lbl_nama.Text = this.user;
+                            i.form_awal = this;
+                            i.Show();
+                        }
+                    }
                 }
             }
-            if (LOGuser==true)
+            if (cek==false)
             {
-                if (dataGridView1.Rows[index].Cells[2].Value.ToString()==txt_password.Text)
-                {
-                    LOGpass = true;
-                }
-                else
-                {
-                    MessageBox.Show("Password Salah");
-                }
+                MessageBox.Show("Password / Username Salah");
             }
-            else
-            {
-                MessageBox.Show("Username tidak Ditemukan");
-            }
-            if (LOGuser && LOGpass)
-            {
-                MessageBox.Show("Berhasil Login");
-                if (dataGridView1.Rows[index].Cells[3].Value.ToString()=="3")
-                {
-                    this.Hide();
-                    Pilih p = new Pilih();
-                    p.form_awal = this;
-                    p.id_jabatan= int.Parse(dataGridView1.Rows[index].Cells[3].Value.ToString());
-                    p.user = this.user;
-                    p.Show();
-                }
-                else
-                {
-                    this.Hide();
-                    Inventory i = new Inventory();
-                    i.id_jabatan = int.Parse(dataGridView1.Rows[index].Cells[3].Value.ToString());
-                    i.lbl_nama.Text = this.user;
-                    i.form_awal = this;
-                    i.Show();
-                }
-            }
-            
-            //if (LOGuser == true && LOGpass == true)
-            //{
-            //    MessageBox.Show("Berhasil Login");
-            //    LOGpass = false;
-            //    LOGuser = false;
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Masih Ada Yang Salah");
-            //    LOGpass = false;
-            //    LOGuser = false;
-            //}
         }
 
         private void awal_Load(object sender, EventArgs e)
         {
-            dbconn.Open();
             datalogin();
-            dbconn.Close();
         }
         public void datalogin()
         {
-            string query = "select * from user_";
+            dbconn.Open();
+            string query = "select USERNAME as name,PASSWORD as pass, ID_Jabatan as jabatan from user_";
             OracleCommand cmd = new OracleCommand(query, dbconn);
             OracleDataAdapter da = new OracleDataAdapter();
             da.SelectCommand = cmd;
-
-            DataSet ds = new DataSet();
+            ds = new DataSet();
             da.Fill(ds);
-            dataGridView1.DataSource = ds.Tables[0];
+            dbconn.Close();
         }
     }
 }
