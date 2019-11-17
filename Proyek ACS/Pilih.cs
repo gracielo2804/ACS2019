@@ -34,8 +34,7 @@ namespace Proyek_ACS
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-            form_awal.Show();
+        {            
             this.Close();
         }
 
@@ -53,6 +52,11 @@ namespace Proyek_ACS
         {
             Report r = new Report();
             r.Show();
+        }
+
+        private void Pilih_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            form_awal.Show();
         }
     }
 }

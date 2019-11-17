@@ -29,12 +29,10 @@ namespace Proyek_ACS
             DataSet ds = new DataSet();
             adapter.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0];
-            adapter = new OracleDataAdapter("select * from user_ where id_jabatan<3",conn);
+            adapter = new OracleDataAdapter("select * from user_ where id_jabatan<3", conn);
             DataSet ds1 = new DataSet();
             adapter.Fill(ds1);
             dataGridView2.DataSource = ds1.Tables[0];
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,7 +42,7 @@ namespace Proyek_ACS
 
         private void btn_logout_Click(object sender, EventArgs e)
         {
-            form_pilih.Show();
+            
             this.Close();
         }
 
@@ -60,9 +58,15 @@ namespace Proyek_ACS
                     eu.lbl_id.Text= iduser;
                     this.Hide();
                     eu.ShowDialog();
+                    this.Master_Login_Load(this,e);
                 }
             }
             
+        }
+
+        private void Master_Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            form_pilih.Show();
         }
     }
 }

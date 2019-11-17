@@ -37,10 +37,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_email = new System.Windows.Forms.TextBox();
+            this.txt_password = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             // 
             this.btn_cancel.BackColor = System.Drawing.Color.Bisque;
             this.btn_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancel.Location = new System.Drawing.Point(269, 370);
+            this.btn_cancel.Location = new System.Drawing.Point(281, 325);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(76, 41);
             this.btn_cancel.TabIndex = 84;
@@ -60,12 +61,13 @@
             // 
             this.btn_add.BackColor = System.Drawing.Color.PeachPuff;
             this.btn_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add.Location = new System.Drawing.Point(107, 370);
+            this.btn_add.Location = new System.Drawing.Point(107, 325);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(76, 41);
             this.btn_add.TabIndex = 83;
             this.btn_add.Text = "Edit";
             this.btn_add.UseVisualStyleBackColor = false;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // txt_nama
             // 
@@ -134,12 +136,12 @@
             this.label4.TabIndex = 77;
             this.label4.Text = "Jabatan : ";
             // 
-            // txt_email
+            // txt_password
             // 
-            this.txt_email.Location = new System.Drawing.Point(189, 168);
-            this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(172, 20);
-            this.txt_email.TabIndex = 80;
+            this.txt_password.Location = new System.Drawing.Point(189, 168);
+            this.txt_password.Name = "txt_password";
+            this.txt_password.Size = new System.Drawing.Size(172, 20);
+            this.txt_password.TabIndex = 80;
             // 
             // comboBox1
             // 
@@ -169,16 +171,26 @@
             this.label5.TabIndex = 86;
             this.label5.Text = "Cabang : ";
             // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(189, 247);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(172, 21);
+            this.comboBox2.TabIndex = 87;
+            // 
             // Edit_User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 450);
+            this.ClientSize = new System.Drawing.Size(400, 382);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_add);
-            this.Controls.Add(this.txt_email);
+            this.Controls.Add(this.txt_password);
             this.Controls.Add(this.txt_nama);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -190,6 +202,7 @@
             this.Name = "Edit_User";
             this.Text = "Edit_User";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Edit_User_FormClosing);
+            this.Load += new System.EventHandler(this.Edit_User_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -207,9 +220,10 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_email;
+        private System.Windows.Forms.TextBox txt_password;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.Label lbl_id;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

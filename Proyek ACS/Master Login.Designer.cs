@@ -125,6 +125,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Master_Login";
             this.Text = "Master_Login";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Master_Login_FormClosing);
             this.Load += new System.EventHandler(this.Master_Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -100,6 +100,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Pilih";
             this.Text = "SignUp";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Pilih_FormClosing);
             this.Load += new System.EventHandler(this.Pilih_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
