@@ -101,5 +101,14 @@ namespace Proyek_ACS
                 form_pilih.Show();
             }
         }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            New n = new New();
+            n.form_inventory = this;
+            this.Hide();
+            n.ShowDialog();
+            this.Inventory_Load(this,e);
+        }
     }
 }
