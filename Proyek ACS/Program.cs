@@ -16,7 +16,7 @@ namespace Proyek_ACS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new New());
+            Application.Run(new awal());
         }
     }
 }
