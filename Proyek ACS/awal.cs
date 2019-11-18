@@ -40,6 +40,7 @@ namespace Proyek_ACS
                             Pilih p = new Pilih();
                             p.form_awal = this;
                             p.id_jabatan = int.Parse(row["Jabatan"].ToString());
+                            p.id_user=row["name"].ToString();
                             p.user = this.user;
                             p.Show();
                         }
@@ -48,8 +49,10 @@ namespace Proyek_ACS
                             this.Hide();
                             Inventory i = new Inventory();
                             i.id_jabatan = int.Parse(row["Jabatan"].ToString());
+                            i.id_user = row["name"].ToString();
                             i.lbl_nama.Text = this.user;
                             i.form_awal = this;
+                            i.parent = "awal";
                             i.Show();
                         }
                     }

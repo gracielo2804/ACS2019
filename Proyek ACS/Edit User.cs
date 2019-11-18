@@ -98,9 +98,8 @@ namespace Proyek_ACS
                             MessageBox.Show("Sudah ada manager di cabang ini");
                         }
                     }
-
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Terjadi kesalahan,Update dibatalkan");
                 }

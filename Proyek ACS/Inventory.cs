@@ -13,10 +13,12 @@ namespace Proyek_ACS
 {
     public partial class Inventory : Form
     {
+        public string parent="";
         OracleConnection conn;
         public awal form_awal;
         public Pilih form_pilih;
         public int id_jabatan;
+        public string id_user;
         OracleDataAdapter adapter;
         
         public Inventory()
@@ -27,43 +29,48 @@ namespace Proyek_ACS
 
         private void Inventory_Load(object sender, EventArgs e)
         {
+            bool cekkaryawan = true;
             if (id_jabatan==1)
             {
+                cekkaryawan = true;
                 button2.Visible = false;
                 button3.Text = "Logout";
             }
             else if (id_jabatan==2)
             {
+                cekkaryawan = false;
                 button2.Visible = true;
                 button3.Text = "Logout";
             }
             else if (id_jabatan == 3)
             {
+                cekkaryawan = false;
                 button2.Visible = true;
                 button3.Text = "Back";
             }
-            adapter = new OracleDataAdapter("select * from cabang", conn);
-            DataSet ds = new DataSet();
-            adapter.Fill(ds);
-            comboBox1.DataSource = ds.Tables[0];
-            comboBox1.ValueMember = "ID_cabang";
-            comboBox1.DisplayMember = "Nama_cabang";
-
-            
+            if (cekkaryawan)
+            {
+                adapter = new OracleDataAdapter("select * from cabang where id_cabang in (select id_cabang from user_ where username='"+id_user+"')", conn);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                comboBox1.DataSource = ds.Tables[0];
+                comboBox1.ValueMember = "ID_cabang";
+                comboBox1.DisplayMember = "Nama_cabang";
+            }
+            else
+            {
+                adapter = new OracleDataAdapter("select * from cabang", conn);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                comboBox1.DataSource = ds.Tables[0];
+                comboBox1.ValueMember = "ID_cabang";
+                comboBox1.DisplayMember = "Nama_cabang";
+            }            
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (button3.Text=="Logout")
-            {
-                form_awal.Show();
-                this.Close();                
-            }
-            else
-            {
-                form_pilih.Show();
-                this.Close();
-            }
+            this.Close();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -81,6 +88,18 @@ namespace Proyek_ACS
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Inventory_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (parent=="awal")
+            {
+                form_awal.Show();
+            }
+            else if (parent=="pilih")
+            {
+                form_pilih.Show();
+            }
         }
     }
 }

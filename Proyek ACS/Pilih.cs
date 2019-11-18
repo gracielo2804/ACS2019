@@ -17,6 +17,7 @@ namespace Proyek_ACS
             InitializeComponent();
         }
         public string user;
+        public string id_user;
         public int id_jabatan;
         public awal form_awal;        
 
@@ -43,6 +44,8 @@ namespace Proyek_ACS
             Inventory i = new Inventory();
             i.form_pilih = this;
             i.id_jabatan = this.id_jabatan;
+            i.id_user = id_user;
+            i.parent = "pilih";
             i.lbl_nama.Text = this.user;
             i.Show();
             this.Hide();

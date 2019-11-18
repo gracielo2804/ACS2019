@@ -68,5 +68,15 @@ namespace Proyek_ACS
         {
             form_pilih.Show();
         }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            New_User nw = new New_User();
+            nw.form_MasterLogin = this;            
+            this.Hide();
+            nw.ShowDialog();
+            this.Master_Login_Load(this, e);
+
+        }
     }
 }
