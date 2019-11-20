@@ -30,7 +30,6 @@
         {
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
             this.txt_email = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,16 +68,7 @@
             this.btn_add.TabIndex = 94;
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Proyek_ACS.Properties.Resources.logokecil;
-            this.pictureBox2.Location = new System.Drawing.Point(19, 32);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(62, 56);
-            this.pictureBox2.TabIndex = 93;
-            this.pictureBox2.TabStop = false;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // label6
             // 
@@ -191,6 +182,16 @@
             this.label3.TabIndex = 82;
             this.label3.Text = "Email  :";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Proyek_ACS.Properties.Resources.logokecil;
+            this.pictureBox2.Location = new System.Drawing.Point(19, 32);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(62, 56);
+            this.pictureBox2.TabIndex = 93;
+            this.pictureBox2.TabStop = false;
+            // 
             // Add_sub
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -212,6 +213,7 @@
             this.Controls.Add(this.label3);
             this.Name = "Add_sub";
             this.Text = "Add_sub";
+            this.Load += new System.EventHandler(this.Add_sub_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

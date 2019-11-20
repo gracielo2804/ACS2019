@@ -44,6 +44,16 @@ namespace Proyek_ACS
                             p.user = this.user;
                             p.Show();
                         }
+                        else if (row["Jabatan"].ToString()=="2")
+                        {
+                            this.Hide();
+                            pilimanager pm = new pilimanager();
+                            pm.form_awal = this;
+                            pm.id_jabatan = int.Parse(row["Jabatan"].ToString());
+                            pm.id_user = row["name"].ToString();
+                            pm.user = this.user;
+                            pm.Show();
+                        }
                         else
                         {
                             this.Hide();

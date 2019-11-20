@@ -113,6 +113,7 @@
             this.txt_nama.Name = "txt_nama";
             this.txt_nama.Size = new System.Drawing.Size(256, 26);
             this.txt_nama.TabIndex = 51;
+            this.txt_nama.TextChanged += new System.EventHandler(this.txt_nama_TextChanged);
             // 
             // txt_alamat
             // 
@@ -133,6 +134,7 @@
             this.btn_add.TabIndex = 55;
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = false;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_cancel
             // 
@@ -145,6 +147,7 @@
             this.btn_cancel.TabIndex = 56;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = false;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // add_contact
             // 
@@ -164,6 +167,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "add_contact";
             this.Text = "add_contact";
+            this.Load += new System.EventHandler(this.add_contact_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

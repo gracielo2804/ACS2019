@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace Proyek_ACS
         OracleConnection conn;
         public awal form_awal;
         public Pilih form_pilih;
+        public pilimanager form_pilih_manager;
         public int id_jabatan;
         public string id_user;
         OracleDataAdapter adapter;
@@ -78,10 +80,34 @@ namespace Proyek_ACS
             if (comboBox1.SelectedIndex>-1)
             {
                 adapter = new OracleDataAdapter("select st.id_sepatu as \"ID Sepatu\",s.nama_sepatu \"Nama Sepatu\" ,st.jumlah_sepatu as Jumlah,st.warna_sepatu as \"Warna Sepatu\" from stok st,sepatu s,cabang c where c.id_cabang=st.id_cabang and st.id_sepatu=s.id_sepatu and c.id_cabang='" + comboBox1.SelectedValue+"'", conn);
-                DataSet ds = new DataSet();
-                adapter.Fill(ds);
-                dataGridView1.DataSource = ds.Tables[0];
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                
+                for(int i = 0; i < dt.Rows.Count; i++)
+                {
+                    try
+                    {
+                        //path gambar dari sepatu
+                        string newPath = AppDomain.CurrentDomain.BaseDirectory + "picture";
+                        string destFile = Path.Combine(newPath, dt.Rows[i].ItemArray[0].ToString() + ".jpg");
+                        
+                        if (destFile != null)
+                        {
+                            //ambil gambar
+                            Image img = Image.FromFile(destFile);
 
+                            //resize image yang di uploadd
+                            Bitmap objBitmap = new Bitmap(img, new Size(100, 100));
+
+                            //insert tiap row
+                            dataGridView1.Rows.Add(dt.Rows[i].ItemArray[0].ToString(), dt.Rows[i].ItemArray[1].ToString(), dt.Rows[i].ItemArray[2].ToString(), dt.Rows[i].ItemArray[3].ToString(), (Image)objBitmap);
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
             }
         }
 

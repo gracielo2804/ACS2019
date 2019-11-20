@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace Proyek_ACS
 {
     public partial class New : Form
     {
+        string path;
         public New()
         {
             InitializeComponent();
@@ -34,10 +36,17 @@ namespace Proyek_ACS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Title = "Choose Picture";
-            openFileDialog1.Filter = "png files(*.png)|*.png";
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Title = "Browse Picture Files";
+            openFileDialog1.Filter = "Picture files (*.jpg)|*.jpg|Picture files (*.png)|*.png|All files (*.*)|*.*";
+
             if (openFileDialog1.ShowDialog()==DialogResult.OK)
             {
+
+                button2.Text = "  " + Path.GetFileName(openFileDialog1.FileName);
+
+                //mengambil lokasi gambar yang di upload
+                path = openFileDialog1.FileName;
                 pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
             }
         }
@@ -82,10 +91,34 @@ namespace Proyek_ACS
                 try
                 {
                     //koding untuk insert kedalam database disini
+
+                    conn.Close();
+                    conn.Open();
+
+
+                    //autogen Kode
+                    string tmp_kode = "SP";
+
+                    OracleDataAdapter adapter = new OracleDataAdapter("SELECT LPAD((COUNT(*)+1),3,'0') FROM SEPATU", conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    tmp_kode += dt.Rows[0].ItemArray[0].ToString();
+
+
+                    //autogen path file secara dinamis
+                    string newPath = AppDomain.CurrentDomain.BaseDirectory + "picture";
+
+                    //copy image ke dalam folder picture di dalam bin debug dengan nama 'tmp_kode'.jpg 
+                    string destFile = Path.Combine(newPath, tmp_kode + ".jpg");
+                    File.Copy(path, destFile, true);
+
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     MessageBox.Show("Terdapat Kesalahan Data,insert dibatalkan");
+
+                    MessageBox.Show(ex.Message);
                 }
             }
             else
