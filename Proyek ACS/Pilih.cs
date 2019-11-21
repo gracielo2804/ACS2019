@@ -54,7 +54,9 @@ namespace Proyek_ACS
         private void button3_Click(object sender, EventArgs e)
         {
             Report r = new Report();
-            r.Show();
+            this.Hide();
+            r.ShowDialog();
+            this.Show();
         }
 
         private void Pilih_FormClosing(object sender, FormClosingEventArgs e)
