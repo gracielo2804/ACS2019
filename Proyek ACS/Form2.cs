@@ -23,12 +23,16 @@ namespace Proyek_ACS
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int row = e.RowIndex;
+            if (e.RowIndex>-1)
+            {
+                int row = e.RowIndex;
 
-            Sub_contact sc = new Sub_contact();
-            sc.id_supplier = dataGridView1.Rows[row].Cells[0].Value.ToString();
-            sc.Show();
-            this.Hide();
+                Sub_contact sc = new Sub_contact();
+                sc.id_supplier = dataGridView1.Rows[row].Cells[0].Value.ToString();
+                this.Hide();
+                sc.ShowDialog();
+                this.Show();
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -62,6 +66,7 @@ namespace Proyek_ACS
             add_contact ac= new add_contact();
             this.Hide();
             ac.ShowDialog();
+            this.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -69,6 +74,7 @@ namespace Proyek_ACS
             EditContact ecc = new EditContact();
             this.Hide();
             ecc.ShowDialog();
+            this.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -76,8 +82,7 @@ namespace Proyek_ACS
             deletecontact dct = new deletecontact();
             this.Hide();
             dct.ShowDialog();
+            this.Show();
         }
-
-
     }
 }

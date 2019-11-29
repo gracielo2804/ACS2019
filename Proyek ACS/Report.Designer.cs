@@ -56,7 +56,7 @@
             "Monthly",
             "Yearly"});
             this.cmb_pilihan.Location = new System.Drawing.Point(23, 148);
-            this.cmb_pilihan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmb_pilihan.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_pilihan.Name = "cmb_pilihan";
             this.cmb_pilihan.Size = new System.Drawing.Size(243, 30);
             this.cmb_pilihan.TabIndex = 1;
@@ -65,7 +65,7 @@
             // 
             this.btn_buat.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_buat.Location = new System.Drawing.Point(275, 140);
-            this.btn_buat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_buat.Margin = new System.Windows.Forms.Padding(4);
             this.btn_buat.Name = "btn_buat";
             this.btn_buat.Size = new System.Drawing.Size(136, 45);
             this.btn_buat.TabIndex = 2;
@@ -77,7 +77,7 @@
             // 
             this.pictureBox1.Image = global::Proyek_ACS.Properties.Resources.logo1;
             this.pictureBox1.Location = new System.Drawing.Point(16, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(244, 116);
             this.pictureBox1.TabIndex = 7;
@@ -111,8 +111,9 @@
             this.Controls.Add(this.btn_buat);
             this.Controls.Add(this.cmb_pilihan);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Report";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
