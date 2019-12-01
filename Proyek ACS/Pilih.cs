@@ -17,6 +17,7 @@ namespace Proyek_ACS
             InitializeComponent();
         }
         public string user;
+        public string namauser;
         public string id_user;
         public int id_jabatan;
         public awal form_awal;        
@@ -25,7 +26,7 @@ namespace Proyek_ACS
         {            
             Master_Login m = new Master_Login();
             m.form_pilih = this;
-            m.lbl_nama.Text = this.user;
+            m.lbl_nama.Text = this.namauser;
             m.Show();
             this.Hide();
         }
@@ -46,9 +47,10 @@ namespace Proyek_ACS
             i.id_jabatan = this.id_jabatan;
             i.id_user = id_user;
             i.parent = "pilih";
-            i.lbl_nama.Text = this.user;
-            i.Show();
+            i.lbl_nama.Text = this.namauser;
             this.Hide();
+            i.ShowDialog();
+            this.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -61,7 +63,7 @@ namespace Proyek_ACS
 
         private void Pilih_FormClosing(object sender, FormClosingEventArgs e)
         {
-            form_awal.Show();
+            //form_awal.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)

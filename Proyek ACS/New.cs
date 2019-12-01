@@ -34,22 +34,7 @@ namespace Proyek_ACS
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Title = "Browse Picture Files";
-            openFileDialog1.Filter = "Picture files (*.jpg)|*.jpg|Picture files (*.png)|*.png|All files (*.*)|*.*";
-
-            if (openFileDialog1.ShowDialog()==DialogResult.OK)
-            {
-
-                button2.Text = "  " + Path.GetFileName(openFileDialog1.FileName);
-
-                //mengambil lokasi gambar yang di upload
-                path = openFileDialog1.FileName;
-                pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
-            }
-        }
+       
 
         private void btn_add_Click(object sender, EventArgs e)
         {
@@ -106,12 +91,12 @@ namespace Proyek_ACS
                     tmp_kode += dt.Rows[0].ItemArray[0].ToString();
 
 
-                    //autogen path file secara dinamis
-                    string newPath = AppDomain.CurrentDomain.BaseDirectory + "picture";
+                    ////autogen path file secara dinamis
+                    //string newPath = AppDomain.CurrentDomain.BaseDirectory + "picture";
 
-                    //copy image ke dalam folder picture di dalam bin debug dengan nama 'tmp_kode'.jpg 
-                    string destFile = Path.Combine(newPath, tmp_kode + ".jpg");
-                    File.Copy(path, destFile, true);
+                    ////copy image ke dalam folder picture di dalam bin debug dengan nama 'tmp_kode'.jpg 
+                    //string destFile = Path.Combine(newPath, tmp_kode + ".jpg");
+                    //File.Copy(path, destFile, true);
 
                 }
                 catch (Exception ex)

@@ -13,6 +13,7 @@ namespace Proyek_ACS
     public partial class pilimanager : Form
     {
         public string user;
+        public string namauser;
         public string id_user;
         public int id_jabatan;
         public awal form_awal;
@@ -24,14 +25,18 @@ namespace Proyek_ACS
         private void button3_Click(object sender, EventArgs e)
         {
             Report r = new Report();
-            r.Show();
+            this.Hide();
+            r.ShowDialog();
+            this.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Form2 f2 = new Form2();
-            f2.Show();
             this.Hide();
+            f2.ShowDialog();
+            this.Show();
+            
         }
 
         private void btn_Stock_Click(object sender, EventArgs e)
@@ -41,9 +46,10 @@ namespace Proyek_ACS
             i.id_jabatan = this.id_jabatan;
             i.id_user = id_user;
             i.parent = "pilimanager";
-            i.lbl_nama.Text = this.user;
-            i.Show();
+            i.lbl_nama.Text = this.namauser;
             this.Hide();
+            i.ShowDialog();
+            this.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)

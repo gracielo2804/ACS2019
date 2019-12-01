@@ -30,7 +30,7 @@ namespace Proyek_ACS
         }
 
         private void Inventory_Load(object sender, EventArgs e)
-        {
+        { 
             bool cekkaryawan = true;
             if (id_jabatan==1)
             {
@@ -42,7 +42,7 @@ namespace Proyek_ACS
             {
                 cekkaryawan = false;
                 button2.Visible = true;
-                button3.Text = "Logout";
+                button3.Text = "Back";
             }
             else if (id_jabatan == 3)
             {
@@ -82,32 +82,34 @@ namespace Proyek_ACS
                 adapter = new OracleDataAdapter("select st.id_sepatu as \"ID Sepatu\",s.nama_sepatu \"Nama Sepatu\" ,st.jumlah_sepatu as Jumlah,st.warna_sepatu as \"Warna Sepatu\" from stok st,sepatu s,cabang c where c.id_cabang=st.id_cabang and st.id_sepatu=s.id_sepatu and c.id_cabang='" + comboBox1.SelectedValue+"'", conn);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
+                dataGridView1.DataSource = dt;
                 
-                for(int i = 0; i < dt.Rows.Count; i++)
-                {
-                    try
-                    {
-                        //path gambar dari sepatu
-                        string newPath = AppDomain.CurrentDomain.BaseDirectory + "picture";
-                        string destFile = Path.Combine(newPath, dt.Rows[i].ItemArray[0].ToString() + ".jpg");
-                        
-                        if (destFile != null)
-                        {
-                            //ambil gambar
-                            Image img = Image.FromFile(destFile);
 
-                            //resize image yang di uploadd
-                            Bitmap objBitmap = new Bitmap(img, new Size(100, 100));
+                //for(int i = 0; i < dt.Rows.Count; i++)
+                //{
+                //    try
+                //    {
+                //        //path gambar dari sepatu
+                //        string newPath = AppDomain.CurrentDomain.BaseDirectory + "picture";
+                //        string destFile = Path.Combine(newPath, dt.Rows[i].ItemArray[0].ToString() + ".jpg");
 
-                            //insert tiap row
-                            dataGridView1.Rows.Add(dt.Rows[i].ItemArray[0].ToString(), dt.Rows[i].ItemArray[1].ToString(), dt.Rows[i].ItemArray[2].ToString(), dt.Rows[i].ItemArray[3].ToString(), (Image)objBitmap);
-                        }
-                    }
-                    catch(Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
+                //        if (destFile != null)
+                //        {
+                //            //ambil gambar
+                //            Image img = Image.FromFile(destFile);
+
+                //            //resize image yang di uploadd
+                //            Bitmap objBitmap = new Bitmap(img, new Size(100, 100));
+
+                //            //insert tiap row
+                //            dataGridView1.Rows.Add(dt.Rows[i].ItemArray[0].ToString(), dt.Rows[i].ItemArray[1].ToString(), dt.Rows[i].ItemArray[2].ToString(), dt.Rows[i].ItemArray[3].ToString(), (Image)objBitmap);
+                //        }
+                //    }
+                //    catch(Exception ex)
+                //    {
+                //        MessageBox.Show(ex.Message);
+                //    }
+                //}
             }
         }
 
@@ -135,6 +137,16 @@ namespace Proyek_ACS
             this.Hide();
             n.ShowDialog();
             this.Inventory_Load(this,e);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Delete_Barang db = new Delete_Barang();
+            db.id_perusahaan = comboBox1.SelectedValue.ToString();
+            this.Hide();
+            db.ShowDialog();
+            this.Show();
+            Inventory_Load(this, e);
         }
     }
 }

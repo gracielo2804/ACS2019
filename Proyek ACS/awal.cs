@@ -42,7 +42,10 @@ namespace Proyek_ACS
                             p.id_jabatan = int.Parse(row["Jabatan"].ToString());
                             p.id_user=row["name"].ToString();
                             p.user = this.user;
-                            p.Show();
+                            p.namauser= row["nama"].ToString();
+                            this.Hide();
+                            p.ShowDialog();
+                            this.Show();
                         }
                         else if (row["Jabatan"].ToString()=="2")
                         {
@@ -52,7 +55,10 @@ namespace Proyek_ACS
                             pm.id_jabatan = int.Parse(row["Jabatan"].ToString());
                             pm.id_user = row["name"].ToString();
                             pm.user = this.user;
-                            pm.Show();
+                            pm.namauser= row["nama"].ToString();
+                            this.Hide();
+                            pm.ShowDialog();
+                            this.Show();
                         }
                         else
                         {
@@ -60,9 +66,9 @@ namespace Proyek_ACS
                             Inventory i = new Inventory();
                             i.id_jabatan = int.Parse(row["Jabatan"].ToString());
                             i.id_user = row["name"].ToString();
-                            i.lbl_nama.Text = this.user;
                             i.form_awal = this;
                             i.parent = "awal";
+                            i.lbl_nama.Text=row["nama"].ToString();
                             i.Show();
                         }
                     }
@@ -81,7 +87,7 @@ namespace Proyek_ACS
         public void datalogin()
         {
             dbconn.Open();
-            string query = "select USERNAME as name,PASSWORD as pass, ID_Jabatan as jabatan from user_";
+            string query = "select USERNAME as name,PASSWORD as pass, ID_Jabatan as jabatan,Nama_user as nama from user_";
             OracleCommand cmd = new OracleCommand(query, dbconn);
             OracleDataAdapter da = new OracleDataAdapter();
             da.SelectCommand = cmd;
