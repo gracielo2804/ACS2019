@@ -28,10 +28,9 @@ namespace Proyek_ACS
             InitializeComponent();
             conn = new OracleConnection("Data source=xe;User ID=proyek;Password=proyek");
         }
-
+        bool cekkaryawan = true;
         private void Inventory_Load(object sender, EventArgs e)
         { 
-            bool cekkaryawan = true;
             if (id_jabatan==1)
             {
                 cekkaryawan = true;
@@ -147,6 +146,22 @@ namespace Proyek_ACS
             db.ShowDialog();
             this.Show();
             Inventory_Load(this, e);
+        }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            string query = "select s.id_sepatu , sep.nama_sepatu , s.jumlah_sepatu , s.warna_sepatu , cab.nama_cabang " +
+                "from sepatu sep, stok s , cabang cab " +
+                "where s.id_sepatu = sep.id_sepatu and cab.id_cabang = s.id_cabang and sep.nama_sepatu like '%"+textBox1.Text+ "%' and cab.nama_cabang like '%" + comboBox1.Text + "%'" +
+                "order by 1 asc"; 
+            OracleCommand cmd = new OracleCommand(query, conn);
+
+            DataSet ds = new DataSet();
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            da.Fill(ds);
+            dataGridView1.DataSource = ds.Tables[0];
+            conn.Close();
         }
     }
 }
