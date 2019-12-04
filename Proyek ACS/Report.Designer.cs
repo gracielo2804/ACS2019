@@ -196,7 +196,6 @@
             this.BulanCmb.Size = new System.Drawing.Size(191, 24);
             this.BulanCmb.TabIndex = 15;
             this.BulanCmb.Visible = false;
-            this.BulanCmb.SelectedIndexChanged += new System.EventHandler(this.BulanCmb_SelectedIndexChanged);
             // 
             // TahunCmbBulanan
             // 

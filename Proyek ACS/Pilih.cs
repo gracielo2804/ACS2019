@@ -27,8 +27,9 @@ namespace Proyek_ACS
             Master_Login m = new Master_Login();
             m.form_pilih = this;
             m.lbl_nama.Text = this.namauser;
-            m.Show();
             this.Hide();
+            m.ShowDialog();
+            this.Show();
         }
 
         private void Pilih_Load(object sender, EventArgs e)

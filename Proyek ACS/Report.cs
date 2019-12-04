@@ -29,22 +29,42 @@ namespace Proyek_ACS
         
         private void Btn_buat_Click(object sender, EventArgs e)
         {
-            Main.Visible = true;
             if (cmb_pilihan.SelectedIndex == 0)
             {
                 LoadData("Daily");
             }
             else if (cmb_pilihan.SelectedIndex == 1)
             {
-                LoadData("Monthly");
+                if (BulanCmb.SelectedIndex >-1 && TahunCmbBulanan.SelectedIndex > -1)
+                {
+                    LoadData("Monthly");
+                }
+                else
+                {
+                    MessageBox.Show("Mohon Memilih bulan dan tahun terlebih dahulu");
+                }
             }
             else if (cmb_pilihan.SelectedIndex == 2)
             {
-                LoadData("Yearly");
+                if (TahunCmbTahunan.SelectedIndex>-1)
+                {
+                    LoadData("Yearly");
+                }
+                else
+                {
+                    MessageBox.Show("mohom memilih tahun terlebih dahulu");
+                }
             }
             else if (cmb_pilihan.SelectedIndex==3)
             {
-                LoadData("Custom");
+                if (TglAwal.Value < TglAkhir.Value)
+                {
+                    LoadData("Custom");
+                }
+                else
+                {
+                    MessageBox.Show("Input Tanggal Salah");
+                }
             }
         }
         public void LoadData(string jenis)
@@ -93,6 +113,7 @@ namespace Proyek_ACS
                     }
                     Main.ReportSource = Custom;
                 }
+                Main.Visible = true;
             }
             catch (Exception ex)
             {
@@ -162,11 +183,6 @@ namespace Proyek_ACS
                 TahunCmbTahunan.Items.Add(i);
             }
             conn.Close();
-        }
-
-        private void BulanCmb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show(BulanCmb.SelectedItem.ToString());
         }
     }
 }

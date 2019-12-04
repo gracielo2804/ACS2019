@@ -22,7 +22,8 @@ namespace Proyek_ACS
         public int id_jabatan;
         public string id_user;
         OracleDataAdapter adapter;
-        
+        DataTable dt,dt2;
+        OracleCommand cmd;
         public Inventory()
         {
             InitializeComponent();
@@ -79,7 +80,7 @@ namespace Proyek_ACS
             if (comboBox1.SelectedIndex>-1)
             {
                 adapter = new OracleDataAdapter("select st.id_sepatu as \"ID Sepatu\",s.nama_sepatu \"Nama Sepatu\" ,st.jumlah_sepatu as Jumlah,st.warna_sepatu as \"Warna Sepatu\" from stok st,sepatu s,cabang c where c.id_cabang=st.id_cabang and st.id_sepatu=s.id_sepatu and c.id_cabang='" + comboBox1.SelectedValue+"'", conn);
-                DataTable dt = new DataTable();
+                dt = new DataTable();
                 adapter.Fill(dt);
                 dataGridView1.DataSource = dt;
                 
@@ -114,7 +115,32 @@ namespace Proyek_ACS
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            Update u = new Update();
+            foreach (DataRow row in dt.Rows)
+            {
+                if (dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() == row["ID Sepatu"].ToString())
+                {
+                    u.label11.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    u.txx_nama.Text = row["Nama Sepatu"].ToString();
+                    u.txt_warna.Text = row["Warna Sepatu"].ToString();
+                    u.nud_jumlah.Value = Convert.ToInt32(row["Jumlah"].ToString());
+                    u.temp = Convert.ToInt32(row["Jumlah"].ToString());
+                    conn.Open();
+                    cmd = new OracleCommand($"Select Harga_Jual as market,Harga_Beli as purchase from SEPATU where id_sepatu ='{row["ID Sepatu"].ToString()}'",conn);
+                    adapter = new OracleDataAdapter(cmd);
+                    dt2 = new DataTable();
+                    adapter.Fill(dt2);
+                    foreach (DataRow row2 in dt2.Rows)
+                    {
+                        u.txt_hargabeli.Text = row2["purchase"].ToString();
+                        u.txt_hargajual.Text = row2["market"].ToString();
+                    }
+                    conn.Close();
+                }
+            }
+            this.Hide();
+            u.ShowDialog();
+            this.Show();
         }
 
         private void Inventory_FormClosing(object sender, FormClosingEventArgs e)
