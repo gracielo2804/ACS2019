@@ -16,14 +16,14 @@ namespace Proyek_ACS {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Custom : ReportClass {
+    public class CrystalReport2 : ReportClass {
         
-        public Custom() {
+        public CrystalReport2() {
         }
         
         public override string ResourceName {
             get {
-                return "Custom.rpt";
+                return "CrystalReport2.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Proyek_ACS {
         
         public override string FullResourceName {
             get {
-                return "Proyek_ACS.Custom.rpt";
+                return "Proyek_ACS.CrystalReport2.rpt";
             }
             set {
                 // Do nothing
@@ -154,9 +154,9 @@ namespace Proyek_ACS {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCustom : Component, ICachedReport {
+    public class CachedCrystalReport2 : Component, ICachedReport {
         
-        public CachedCustom() {
+        public CachedCrystalReport2() {
         }
         
         [Browsable(false)]
@@ -193,7 +193,7 @@ namespace Proyek_ACS {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Custom rpt = new Custom();
+            CrystalReport2 rpt = new CrystalReport2();
             rpt.Site = this.Site;
             return rpt;
         }

@@ -21,10 +21,12 @@ namespace Proyek_ACS
             this.CenterToScreen();
         }
         OracleConnection conn;
-        CrystalReport1 cry;
+        CrystalReport1 Daily;
+        CrystalReport2 Custom;
+        
         private void Btn_buat_Click(object sender, EventArgs e)
         {
-            Main.Visible = true;
+            TglAwal.Visible = true;
             if (cmb_pilihan.SelectedIndex == 0)
             {
                 LoadData("Daily");
@@ -35,13 +37,20 @@ namespace Proyek_ACS
             conn.Open();
             try
             {
-                cry = new CrystalReport1();
-                cry.SetDatabaseLogon("proyek","proyek");
+                Daily.SetDatabaseLogon("proyek","proyek");
                 if (jenis=="Daily")
                 {
-                    cry.SetParameterValue("Daily", Date.Value.ToShortDateString());
+                    Daily = new CrystalReport1();
+                    Daily.SetParameterValue("Daily", Date.Value.ToShortDateString());
+                    TglAwal.ReportSource = Daily;
                 }
-                Main.ReportSource = cry;
+                else if (jenis=="Custom")
+                {
+                    Custom = new CrystalReport2();
+                    Custom.SetParameterValue("Tgl_Awal","");
+                    Custom.SetParameterValue("Tgl_Akhir", "");
+                    TglAwal.ReportSource = Custom;
+                }
             }
             catch (Exception ex)
             {
@@ -57,6 +66,20 @@ namespace Proyek_ACS
                 if (cmb_pilihan.SelectedIndex == 0)
                 {
                     Date.Visible = true;
+                    DailyLbl.Visible = true;
+                    TglAkhir.Visible = false;
+                    TglAwal.Visible = false;
+                    TglAwalLbl.Visible = false;
+                    TglAkhirLbl.Visible = false;
+                }
+                else if (cmb_pilihan.SelectedIndex == 3)
+                {
+                    Date.Visible = false;
+                    DailyLbl.Visible = false;
+                    TglAkhir.Visible = true;
+                    TglAwal.Visible = true;
+                    TglAwalLbl.Visible = true;
+                    TglAkhirLbl.Visible = true;
                 }
                 btn_buat.Visible = true;
             }

@@ -32,8 +32,13 @@
             this.cmb_pilihan = new System.Windows.Forms.ComboBox();
             this.btn_buat = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Main = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.TglAwal = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.Date = new System.Windows.Forms.DateTimePicker();
+            this.DailyLbl = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.TglAkhir = new System.Windows.Forms.DateTimePicker();
+            this.TglAwalLbl = new System.Windows.Forms.Label();
+            this.TglAkhirLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +60,8 @@
             this.cmb_pilihan.Items.AddRange(new object[] {
             "Daily",
             "Monthly",
-            "Yearly"});
+            "Yearly",
+            "Custom"});
             this.cmb_pilihan.Location = new System.Drawing.Point(23, 148);
             this.cmb_pilihan.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_pilihan.Name = "cmb_pilihan";
@@ -86,39 +92,93 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
-            // Main
+            // TglAwal
             // 
-            this.Main.ActiveViewIndex = -1;
-            this.Main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TglAwal.ActiveViewIndex = -1;
+            this.TglAwal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Main.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Main.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Main.DisplayStatusBar = false;
-            this.Main.Location = new System.Drawing.Point(23, 223);
-            this.Main.Name = "Main";
-            this.Main.ShowCopyButton = false;
-            this.Main.ShowZoomButton = false;
-            this.Main.Size = new System.Drawing.Size(912, 709);
-            this.Main.TabIndex = 8;
-            this.Main.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            this.Main.Visible = false;
+            this.TglAwal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TglAwal.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TglAwal.DisplayStatusBar = false;
+            this.TglAwal.Location = new System.Drawing.Point(418, 127);
+            this.TglAwal.Name = "TglAwal";
+            this.TglAwal.ShowCopyButton = false;
+            this.TglAwal.ShowZoomButton = false;
+            this.TglAwal.Size = new System.Drawing.Size(1302, 814);
+            this.TglAwal.TabIndex = 8;
+            this.TglAwal.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.TglAwal.Visible = false;
             // 
             // Date
             // 
-            this.Date.Location = new System.Drawing.Point(23, 195);
+            this.Date.Location = new System.Drawing.Point(27, 217);
             this.Date.Name = "Date";
-            this.Date.Size = new System.Drawing.Size(200, 22);
+            this.Date.Size = new System.Drawing.Size(243, 22);
             this.Date.TabIndex = 9;
             this.Date.Visible = false;
+            // 
+            // DailyLbl
+            // 
+            this.DailyLbl.AutoSize = true;
+            this.DailyLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DailyLbl.Location = new System.Drawing.Point(23, 194);
+            this.DailyLbl.Name = "DailyLbl";
+            this.DailyLbl.Size = new System.Drawing.Size(130, 20);
+            this.DailyLbl.TabIndex = 10;
+            this.DailyLbl.Text = "Pilih Tanggal :";
+            this.DailyLbl.Visible = false;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(27, 217);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(243, 22);
+            this.dateTimePicker1.TabIndex = 11;
+            this.dateTimePicker1.Visible = false;
+            // 
+            // TglAkhir
+            // 
+            this.TglAkhir.Location = new System.Drawing.Point(27, 265);
+            this.TglAkhir.Name = "TglAkhir";
+            this.TglAkhir.Size = new System.Drawing.Size(243, 22);
+            this.TglAkhir.TabIndex = 12;
+            this.TglAkhir.Visible = false;
+            // 
+            // TglAwalLbl
+            // 
+            this.TglAwalLbl.AutoSize = true;
+            this.TglAwalLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TglAwalLbl.Location = new System.Drawing.Point(23, 194);
+            this.TglAwalLbl.Name = "TglAwalLbl";
+            this.TglAwalLbl.Size = new System.Drawing.Size(133, 20);
+            this.TglAwalLbl.TabIndex = 13;
+            this.TglAwalLbl.Text = "Tanggal Awal :";
+            this.TglAwalLbl.Visible = false;
+            // 
+            // TglAkhirLbl
+            // 
+            this.TglAkhirLbl.AutoSize = true;
+            this.TglAkhirLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TglAkhirLbl.Location = new System.Drawing.Point(23, 242);
+            this.TglAkhirLbl.Name = "TglAkhirLbl";
+            this.TglAkhirLbl.Size = new System.Drawing.Size(136, 20);
+            this.TglAkhirLbl.TabIndex = 14;
+            this.TglAkhirLbl.Text = "Tanggal Akhir :";
+            this.TglAkhirLbl.Visible = false;
             // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1729, 944);
+            this.ClientSize = new System.Drawing.Size(1732, 953);
+            this.Controls.Add(this.TglAkhirLbl);
+            this.Controls.Add(this.TglAwalLbl);
+            this.Controls.Add(this.TglAkhir);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.DailyLbl);
             this.Controls.Add(this.Date);
-            this.Controls.Add(this.Main);
+            this.Controls.Add(this.TglAwal);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_buat);
             this.Controls.Add(this.cmb_pilihan);
@@ -139,7 +199,12 @@
         private System.Windows.Forms.ComboBox cmb_pilihan;
         private System.Windows.Forms.Button btn_buat;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer Main;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer TglAwal;
         private System.Windows.Forms.DateTimePicker Date;
+        private System.Windows.Forms.Label DailyLbl;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker TglAkhir;
+        private System.Windows.Forms.Label TglAwalLbl;
+        private System.Windows.Forms.Label TglAkhirLbl;
     }
 }
