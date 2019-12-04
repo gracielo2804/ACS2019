@@ -33,6 +33,7 @@
             this.btn_buat = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Main = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.Date = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +61,7 @@
             this.cmb_pilihan.Name = "cmb_pilihan";
             this.cmb_pilihan.Size = new System.Drawing.Size(243, 30);
             this.cmb_pilihan.TabIndex = 1;
+            this.cmb_pilihan.SelectedIndexChanged += new System.EventHandler(this.Cmb_pilihan_SelectedIndexChanged);
             // 
             // btn_buat
             // 
@@ -71,6 +73,7 @@
             this.btn_buat.TabIndex = 2;
             this.btn_buat.Text = "Generate";
             this.btn_buat.UseVisualStyleBackColor = true;
+            this.btn_buat.Visible = false;
             this.btn_buat.Click += new System.EventHandler(this.Btn_buat_Click);
             // 
             // pictureBox1
@@ -92,7 +95,7 @@
             this.Main.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Main.Cursor = System.Windows.Forms.Cursors.Default;
             this.Main.DisplayStatusBar = false;
-            this.Main.Location = new System.Drawing.Point(23, 207);
+            this.Main.Location = new System.Drawing.Point(23, 223);
             this.Main.Name = "Main";
             this.Main.ShowCopyButton = false;
             this.Main.ShowZoomButton = false;
@@ -101,11 +104,20 @@
             this.Main.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             this.Main.Visible = false;
             // 
+            // Date
+            // 
+            this.Date.Location = new System.Drawing.Point(23, 195);
+            this.Date.Name = "Date";
+            this.Date.Size = new System.Drawing.Size(200, 22);
+            this.Date.TabIndex = 9;
+            this.Date.Visible = false;
+            // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1729, 944);
+            this.Controls.Add(this.Date);
             this.Controls.Add(this.Main);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_buat);
@@ -128,5 +140,6 @@
         private System.Windows.Forms.Button btn_buat;
         private System.Windows.Forms.PictureBox pictureBox1;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer Main;
+        private System.Windows.Forms.DateTimePicker Date;
     }
 }

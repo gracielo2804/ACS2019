@@ -25,15 +25,22 @@ namespace Proyek_ACS
         private void Btn_buat_Click(object sender, EventArgs e)
         {
             Main.Visible = true;
-            LoadData();
+            if (cmb_pilihan.SelectedIndex == 0)
+            {
+                LoadData("Daily");
+            }
         }
-        public void LoadData()
+        public void LoadData(string jenis)
         {
             conn.Open();
             try
             {
                 cry = new CrystalReport1();
                 cry.SetDatabaseLogon("proyek","proyek");
+                if (jenis=="Daily")
+                {
+                    cry.SetParameterValue("Daily", Date.Value.ToShortDateString());
+                }
                 Main.ReportSource = cry;
             }
             catch (Exception ex)
@@ -41,6 +48,19 @@ namespace Proyek_ACS
                 MessageBox.Show(ex.Message);
             }
             conn.Close();
+        }
+
+        private void Cmb_pilihan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_pilihan.SelectedIndex>-1)
+            {
+                if (cmb_pilihan.SelectedIndex == 0)
+                {
+                    Date.Visible = true;
+                }
+                btn_buat.Visible = true;
+            }
+            
         }
     }
 }
