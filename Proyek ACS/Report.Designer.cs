@@ -32,13 +32,19 @@
             this.cmb_pilihan = new System.Windows.Forms.ComboBox();
             this.btn_buat = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.TglAwal = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.Main = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.Date = new System.Windows.Forms.DateTimePicker();
             this.DailyLbl = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.TglAwal = new System.Windows.Forms.DateTimePicker();
             this.TglAkhir = new System.Windows.Forms.DateTimePicker();
             this.TglAwalLbl = new System.Windows.Forms.Label();
             this.TglAkhirLbl = new System.Windows.Forms.Label();
+            this.BulanCmb = new System.Windows.Forms.ComboBox();
+            this.TahunCmbBulanan = new System.Windows.Forms.ComboBox();
+            this.TahunCmbTahunan = new System.Windows.Forms.ComboBox();
+            this.TahunLbl = new System.Windows.Forms.Label();
+            this.TahunLblBulanan = new System.Windows.Forms.Label();
+            this.BulanLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,6 +61,7 @@
             // 
             // cmb_pilihan
             // 
+            this.cmb_pilihan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_pilihan.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_pilihan.FormattingEnabled = true;
             this.cmb_pilihan.Items.AddRange(new object[] {
@@ -92,23 +99,23 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
-            // TglAwal
+            // Main
             // 
-            this.TglAwal.ActiveViewIndex = -1;
-            this.TglAwal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Main.ActiveViewIndex = -1;
+            this.Main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TglAwal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TglAwal.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TglAwal.DisplayStatusBar = false;
-            this.TglAwal.Location = new System.Drawing.Point(418, 127);
-            this.TglAwal.Name = "TglAwal";
-            this.TglAwal.ShowCopyButton = false;
-            this.TglAwal.ShowZoomButton = false;
-            this.TglAwal.Size = new System.Drawing.Size(1302, 814);
-            this.TglAwal.TabIndex = 8;
-            this.TglAwal.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            this.TglAwal.Visible = false;
+            this.Main.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Main.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Main.DisplayStatusBar = false;
+            this.Main.Location = new System.Drawing.Point(418, 127);
+            this.Main.Name = "Main";
+            this.Main.ShowCopyButton = false;
+            this.Main.ShowZoomButton = false;
+            this.Main.Size = new System.Drawing.Size(1302, 814);
+            this.Main.TabIndex = 8;
+            this.Main.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.Main.Visible = false;
             // 
             // Date
             // 
@@ -129,13 +136,13 @@
             this.DailyLbl.Text = "Pilih Tanggal :";
             this.DailyLbl.Visible = false;
             // 
-            // dateTimePicker1
+            // TglAwal
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(27, 217);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(243, 22);
-            this.dateTimePicker1.TabIndex = 11;
-            this.dateTimePicker1.Visible = false;
+            this.TglAwal.Location = new System.Drawing.Point(27, 217);
+            this.TglAwal.Name = "TglAwal";
+            this.TglAwal.Size = new System.Drawing.Size(243, 22);
+            this.TglAwal.TabIndex = 11;
+            this.TglAwal.Visible = false;
             // 
             // TglAkhir
             // 
@@ -167,18 +174,101 @@
             this.TglAkhirLbl.Text = "Tanggal Akhir :";
             this.TglAkhirLbl.Visible = false;
             // 
+            // BulanCmb
+            // 
+            this.BulanCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BulanCmb.FormattingEnabled = true;
+            this.BulanCmb.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
+            this.BulanCmb.Location = new System.Drawing.Point(27, 217);
+            this.BulanCmb.Name = "BulanCmb";
+            this.BulanCmb.Size = new System.Drawing.Size(191, 24);
+            this.BulanCmb.TabIndex = 15;
+            this.BulanCmb.Visible = false;
+            this.BulanCmb.SelectedIndexChanged += new System.EventHandler(this.BulanCmb_SelectedIndexChanged);
+            // 
+            // TahunCmbBulanan
+            // 
+            this.TahunCmbBulanan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TahunCmbBulanan.FormattingEnabled = true;
+            this.TahunCmbBulanan.Location = new System.Drawing.Point(27, 274);
+            this.TahunCmbBulanan.Name = "TahunCmbBulanan";
+            this.TahunCmbBulanan.Size = new System.Drawing.Size(191, 24);
+            this.TahunCmbBulanan.TabIndex = 16;
+            this.TahunCmbBulanan.Visible = false;
+            // 
+            // TahunCmbTahunan
+            // 
+            this.TahunCmbTahunan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TahunCmbTahunan.FormattingEnabled = true;
+            this.TahunCmbTahunan.Location = new System.Drawing.Point(27, 217);
+            this.TahunCmbTahunan.Name = "TahunCmbTahunan";
+            this.TahunCmbTahunan.Size = new System.Drawing.Size(191, 24);
+            this.TahunCmbTahunan.TabIndex = 17;
+            this.TahunCmbTahunan.Visible = false;
+            // 
+            // TahunLbl
+            // 
+            this.TahunLbl.AutoSize = true;
+            this.TahunLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TahunLbl.Location = new System.Drawing.Point(23, 194);
+            this.TahunLbl.Name = "TahunLbl";
+            this.TahunLbl.Size = new System.Drawing.Size(72, 20);
+            this.TahunLbl.TabIndex = 18;
+            this.TahunLbl.Text = "Tahun :";
+            this.TahunLbl.Visible = false;
+            // 
+            // TahunLblBulanan
+            // 
+            this.TahunLblBulanan.AutoSize = true;
+            this.TahunLblBulanan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TahunLblBulanan.Location = new System.Drawing.Point(23, 251);
+            this.TahunLblBulanan.Name = "TahunLblBulanan";
+            this.TahunLblBulanan.Size = new System.Drawing.Size(72, 20);
+            this.TahunLblBulanan.TabIndex = 19;
+            this.TahunLblBulanan.Text = "Tahun :";
+            this.TahunLblBulanan.Visible = false;
+            // 
+            // BulanLbl
+            // 
+            this.BulanLbl.AutoSize = true;
+            this.BulanLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BulanLbl.Location = new System.Drawing.Point(23, 194);
+            this.BulanLbl.Name = "BulanLbl";
+            this.BulanLbl.Size = new System.Drawing.Size(69, 20);
+            this.BulanLbl.TabIndex = 20;
+            this.BulanLbl.Text = "Bulan :";
+            this.BulanLbl.Visible = false;
+            // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1732, 953);
+            this.Controls.Add(this.BulanLbl);
+            this.Controls.Add(this.TahunLblBulanan);
+            this.Controls.Add(this.TahunLbl);
+            this.Controls.Add(this.TahunCmbTahunan);
+            this.Controls.Add(this.TahunCmbBulanan);
+            this.Controls.Add(this.BulanCmb);
             this.Controls.Add(this.TglAkhirLbl);
             this.Controls.Add(this.TglAwalLbl);
             this.Controls.Add(this.TglAkhir);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.TglAwal);
             this.Controls.Add(this.DailyLbl);
             this.Controls.Add(this.Date);
-            this.Controls.Add(this.TglAwal);
+            this.Controls.Add(this.Main);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_buat);
             this.Controls.Add(this.cmb_pilihan);
@@ -187,6 +277,7 @@
             this.Name = "Report";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report";
+            this.Load += new System.EventHandler(this.Report_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -199,12 +290,18 @@
         private System.Windows.Forms.ComboBox cmb_pilihan;
         private System.Windows.Forms.Button btn_buat;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer TglAwal;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer Main;
         private System.Windows.Forms.DateTimePicker Date;
         private System.Windows.Forms.Label DailyLbl;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker TglAwal;
         private System.Windows.Forms.DateTimePicker TglAkhir;
         private System.Windows.Forms.Label TglAwalLbl;
         private System.Windows.Forms.Label TglAkhirLbl;
+        private System.Windows.Forms.ComboBox BulanCmb;
+        private System.Windows.Forms.ComboBox TahunCmbBulanan;
+        private System.Windows.Forms.ComboBox TahunCmbTahunan;
+        private System.Windows.Forms.Label TahunLbl;
+        private System.Windows.Forms.Label TahunLblBulanan;
+        private System.Windows.Forms.Label BulanLbl;
     }
 }

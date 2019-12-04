@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CrystalDecisions.CrystalReports.Engine;
 using Oracle.DataAccess.Client;
 
 namespace Proyek_ACS
@@ -17,19 +18,33 @@ namespace Proyek_ACS
         {
             InitializeComponent();
             conn = new OracleConnection("Data source=xe;User ID=proyek;Password=proyek");
-            //this.Location = new Point((Screen.PrimaryScreen.Bounds.Size.Width / 2) - (this.Size.Width / 2), (Screen.PrimaryScreen.Bounds.Size.Height / 2) - (this.Size.Height / 2)); Menengahkan
             this.CenterToScreen();
         }
         OracleConnection conn;
+        OracleDataAdapter ad;
+        OracleCommand cmd;
+        DataTable dt;
         CrystalReport1 Daily;
         CrystalReport2 Custom;
         
         private void Btn_buat_Click(object sender, EventArgs e)
         {
-            TglAwal.Visible = true;
+            Main.Visible = true;
             if (cmb_pilihan.SelectedIndex == 0)
             {
                 LoadData("Daily");
+            }
+            else if (cmb_pilihan.SelectedIndex == 1)
+            {
+                LoadData("Monthly");
+            }
+            else if (cmb_pilihan.SelectedIndex == 2)
+            {
+                LoadData("Yearly");
+            }
+            else if (cmb_pilihan.SelectedIndex==3)
+            {
+                LoadData("Custom");
             }
         }
         public void LoadData(string jenis)
@@ -37,19 +52,46 @@ namespace Proyek_ACS
             conn.Open();
             try
             {
-                Daily.SetDatabaseLogon("proyek","proyek");
                 if (jenis=="Daily")
                 {
                     Daily = new CrystalReport1();
-                    Daily.SetParameterValue("Daily", Date.Value.ToShortDateString());
-                    TglAwal.ReportSource = Daily;
+                    Daily.SetDatabaseLogon("proyek", "proyek");
+                    Daily.SetParameterValue("Daily", Date.Value);
+                    Main.ReportSource = Daily;
                 }
-                else if (jenis=="Custom")
+                else 
                 {
                     Custom = new CrystalReport2();
-                    Custom.SetParameterValue("Tgl_Awal","");
-                    Custom.SetParameterValue("Tgl_Akhir", "");
-                    TglAwal.ReportSource = Custom;
+                    TextObject txt;
+                    txt = Custom.ReportDefinition.ReportObjects["BulanTxt"] as TextObject;
+                    Custom.SetDatabaseLogon("proyek", "proyek");
+                    if (jenis == "Custom")
+                    {
+                        Custom.SetParameterValue("Tgl_Awal", TglAwal.Value);
+                        Custom.SetParameterValue("Tgl_Akhir", TglAkhir.Value);
+                        Custom.SetParameterValue("Jenis", "Custom");
+                        txt.Text = "";
+                    }
+                    else if (jenis== "Monthly")
+                    {
+                        string a = "1/" + BulanCmb.SelectedItem.ToString()+"/"+ TahunCmbBulanan.SelectedItem.ToString().Substring(2, 2);
+                        Custom.SetParameterValue("Tgl_awal", Convert.ToDateTime(a));
+                        cmd = new OracleCommand($"Select last_day('{a}') from dual",conn);
+                        ad = new OracleDataAdapter(cmd);
+                        DataSet ds = new DataSet();
+                        ad.Fill(ds);
+                        Custom.SetParameterValue("Tgl_Akhir", Convert.ToDateTime(ds.Tables[0].Rows[0][0].ToString()));
+                        Custom.SetParameterValue("Jenis", "Bulan");
+                        txt.Text = BulanCmb.SelectedItem.ToString()+" - "+ TahunCmbBulanan.SelectedItem.ToString();
+                    }
+                    else if (jenis== "Yearly")
+                    {
+                        Custom.SetParameterValue("Tgl_Awal", Convert.ToDateTime("01/January/"+TahunCmbTahunan.SelectedItem.ToString()));
+                        Custom.SetParameterValue("Tgl_Akhir", Convert.ToDateTime("31/December/" + TahunCmbTahunan.SelectedItem.ToString()));
+                        Custom.SetParameterValue("Jenis", "Tahun");
+                        txt.Text = TahunCmbTahunan.SelectedItem.ToString();
+                    }
+                    Main.ReportSource = Custom;
                 }
             }
             catch (Exception ex)
@@ -63,19 +105,37 @@ namespace Proyek_ACS
         {
             if (cmb_pilihan.SelectedIndex>-1)
             {
+                Date.Visible = false;
+                DailyLbl.Visible = false;
+                TglAwal.Visible = false;
+                Main.Visible = false;
+                TglAwalLbl.Visible = false;
+                TglAkhirLbl.Visible = false;
+                BulanCmb.Visible = false;
+                BulanLbl.Visible = false;
+                TahunCmbBulanan.Visible = false;
+                TahunLblBulanan.Visible = false;
+                TahunCmbTahunan.Visible = false;
+                TahunLbl.Visible = false;
                 if (cmb_pilihan.SelectedIndex == 0)
                 {
                     Date.Visible = true;
                     DailyLbl.Visible = true;
-                    TglAkhir.Visible = false;
-                    TglAwal.Visible = false;
-                    TglAwalLbl.Visible = false;
-                    TglAkhirLbl.Visible = false;
+                }
+                else if (cmb_pilihan.SelectedIndex==1)
+                {
+                    BulanCmb.Visible = true;
+                    BulanLbl.Visible = true;
+                    TahunCmbBulanan.Visible = true;
+                    TahunLblBulanan.Visible = true;
+                }
+                else if (cmb_pilihan.SelectedIndex==2)
+                {
+                    TahunCmbTahunan.Visible = true;
+                    TahunLbl.Visible = true;
                 }
                 else if (cmb_pilihan.SelectedIndex == 3)
                 {
-                    Date.Visible = false;
-                    DailyLbl.Visible = false;
                     TglAkhir.Visible = true;
                     TglAwal.Visible = true;
                     TglAwalLbl.Visible = true;
@@ -84,6 +144,29 @@ namespace Proyek_ACS
                 btn_buat.Visible = true;
             }
             
+        }
+
+        private void Report_Load(object sender, EventArgs e)
+        {
+            conn.Open();
+            cmd = new OracleCommand("Select max(TANGGAL_LOG) as max, min(TANGGAL_LOG) as min from LOG_SEPATU", conn);
+            ad = new OracleDataAdapter(cmd);
+            dt = new DataTable();
+            ad.Fill(dt);
+            DataRow row = dt.Rows[0];
+            int max = Convert.ToInt32(Convert.ToDateTime(row["max"]).ToString("yyyy"));
+            int min = Convert.ToInt32(Convert.ToDateTime(row["min"]).ToString("yyyy"));
+            for (int i = min; i <= max; i++)
+            {
+                TahunCmbBulanan.Items.Add(i);
+                TahunCmbTahunan.Items.Add(i);
+            }
+            conn.Close();
+        }
+
+        private void BulanCmb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show(BulanCmb.SelectedItem.ToString());
         }
     }
 }
