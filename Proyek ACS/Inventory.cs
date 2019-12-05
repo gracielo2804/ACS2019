@@ -160,6 +160,7 @@ namespace Proyek_ACS
             New n = new New();
             n.form_inventory = this;
             n.id_cabang = comboBox1.SelectedValue.ToString();
+            n.id_user = id_user;
             this.Hide();
             n.ShowDialog();
             this.Inventory_Load(this,e);
