@@ -79,7 +79,7 @@ namespace Proyek_ACS
         {
             if (comboBox1.SelectedIndex>-1)
             {
-                adapter = new OracleDataAdapter("select st.id_sepatu as \"ID Sepatu\",s.nama_sepatu \"Nama Sepatu\" ,st.jumlah_sepatu as Jumlah,st.warna_sepatu as \"Warna Sepatu\" from stok st,sepatu s,cabang c where c.id_cabang=st.id_cabang and st.id_sepatu=s.id_sepatu and c.id_cabang='" + comboBox1.SelectedValue+"'", conn);
+                adapter = new OracleDataAdapter("select st.id_sepatu as \"ID Sepatu\",s.nama_sepatu \"Nama Sepatu\" ,st.jumlah_sepatu as Jumlah,st.warna_sepatu as \"Warna Sepatu\", st.Ukuran_Sepatu as \"Ukuran\"  from stok st,sepatu s,cabang c where c.id_cabang=st.id_cabang and st.id_sepatu=s.id_sepatu and c.id_cabang='" + comboBox1.SelectedValue+"'", conn);
                 dt = new DataTable();
                 adapter.Fill(dt);
                 dataGridView1.DataSource = dt;
@@ -124,7 +124,12 @@ namespace Proyek_ACS
                     u.txx_nama.Text = row["Nama Sepatu"].ToString();
                     u.txt_warna.Text = row["Warna Sepatu"].ToString();
                     u.nud_jumlah.Value = Convert.ToInt32(row["Jumlah"].ToString());
-                    u.temp = Convert.ToInt32(row["Jumlah"].ToString());
+                    u.Awal = Convert.ToInt32(row["Jumlah"].ToString());
+                    u.nama = row["Nama Sepatu"].ToString();
+                    u.ukuran = Convert.ToInt32(row["Ukuran"].ToString());
+                    u.warna = row["Warna Sepatu"].ToString();
+                    u.Username = id_user;
+                    u.nud_ukuran.Value = Convert.ToInt32(row["Ukuran"].ToString());
                     conn.Open();
                     cmd = new OracleCommand($"Select Harga_Jual as market,Harga_Beli as purchase from SEPATU where id_sepatu ='{row["ID Sepatu"].ToString()}'",conn);
                     adapter = new OracleDataAdapter(cmd);

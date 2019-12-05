@@ -18,7 +18,10 @@ namespace Proyek_ACS
         DataTable dt;
         DataSet ds;
         OracleConnection conn;
-        public int temp;
+        public int Awal;
+        public string warna,nama,Username;
+        public int ukuran;
+        string kodelog;
         public Update()
         {
             InitializeComponent();
@@ -29,8 +32,33 @@ namespace Proyek_ACS
         private void Btn_add_Click(object sender, EventArgs e)
         {
             conn.Open();
-            cmd = new OracleCommand($"UPDATE Sepatu SET NAMA_SEPATU ='{txx_nama.Text}', harga_jual='{txt_hargajual.Text}', harga_beli='{txt_hargajual.Text}' where ID_Sepatu ='{label11.Text}'",conn);
-            cmd.ExecuteNonQuery();
+            try
+            {
+                cmd = new OracleCommand($"UPDATE Sepatu SET NAMA_SEPATU ='{txx_nama.Text}', harga_jual='{txt_hargajual.Text}', harga_beli='{txt_hargajual.Text}', ID_Tipe ='{cmb_kategori.SelectedValue.ToString()}' where ID_Sepatu ='{label11.Text}'", conn);
+                cmd.ExecuteNonQuery();
+                cmd = new OracleCommand($"Update Stok set UKURAN_SEPATU ='{nud_ukuran.Value}', JUMLAH_SEPATU ='{nud_jumlah.Value}', WARNA_SEPATU = '{txt_warna.Text}' where ID_SEPATU ='{label11.Text}'and WARNA_SEPATU ='{warna}'and UKURAN_SEPATU = '{ukuran}' ", conn);
+                cmd.ExecuteNonQuery();
+                cmd = new OracleCommand($"Update LOG_SEPATU set ukuran_sepatu ='{nud_ukuran.Value}', warna_sepatu ='{txt_warna.Text}' where id_sepatu = '{label11.Text}'", conn);
+                cmd.ExecuteNonQuery();
+                if (this.Awal > nud_jumlah.Value)
+                {
+                    int Kurang = Awal - Convert.ToInt32(nud_jumlah.Value);
+                    cmd = new OracleCommand($"Insert into log_Sepatu values ('{kodelog}',1,0,'{label11.Text}',{Kurang}','{nud_ukuran.Value}','{txt_warna.Text}',To_Date(sysdate,'DD/MM/YYYY'),'{this.Username}')", conn);
+                    cmd.ExecuteNonQuery();
+                }
+                else if (this.Awal < nud_jumlah.Value)
+                {
+                    int tambah = Convert.ToInt32(nud_jumlah.Value) - Awal;
+                    cmd = new OracleCommand($"Insert into log_Sepatu values ('{kodelog}',1,1,'{label11.Text}',{tambah}','{nud_ukuran.Value}','{txt_warna.Text}',To_Date(sysdate,'DD/MM/YYYY'),'{this.Username}')", conn);
+                    cmd.ExecuteNonQuery();
+                }
+                MessageBox.Show("Barang dengan code " + label11.Text + " Berhasil Di Edit");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             conn.Close();
         }
 
@@ -49,7 +77,16 @@ namespace Proyek_ACS
             ds = new DataSet();
             ad.Fill(ds);
             cmb_kategori.SelectedValue = ds.Tables[0].Rows[0][0].ToString();
+            ad = new OracleDataAdapter("SELECT LPAD((COUNT(*)+1),3,'0') FROM Log_Sepatu", conn);
+            DataTable dt1 = new DataTable();
+            ad.Fill(dt1);
+            kodelog = dt1.Rows[0].ItemArray[0].ToString();
             conn.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
