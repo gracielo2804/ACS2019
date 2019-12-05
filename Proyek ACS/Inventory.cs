@@ -159,6 +159,7 @@ namespace Proyek_ACS
         {
             New n = new New();
             n.form_inventory = this;
+            n.id_cabang = comboBox1.SelectedValue.ToString();
             this.Hide();
             n.ShowDialog();
             this.Inventory_Load(this,e);
@@ -176,10 +177,11 @@ namespace Proyek_ACS
 
         private void btn_search_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(comboBox1.Text);
             conn.Open();
-            string query = "select s.id_sepatu , sep.nama_sepatu , s.jumlah_sepatu , s.warna_sepatu , cab.nama_cabang " +
+            string query = "select s.id_sepatu , sep.nama_sepatu , s.jumlah_sepatu , s.warna_sepatu , cab.nama_cabang "+
                 "from sepatu sep, stok s , cabang cab " +
-                "where s.id_sepatu = sep.id_sepatu and cab.id_cabang = s.id_cabang and sep.nama_sepatu like '%"+textBox1.Text+ "%' and cab.nama_cabang like '%" + comboBox1.Text + "%'" +
+                "where s.id_sepatu = sep.id_sepatu and cab.id_cabang = s.id_cabang and sep.nama_sepatu like upper('%"+textBox1.Text+ "%') and cab.nama_cabang like '%" + comboBox1.Text + "%'" +
                 "order by 1 asc"; 
             OracleCommand cmd = new OracleCommand(query, conn);
 

@@ -15,6 +15,7 @@ namespace Proyek_ACS
     public partial class New : Form
     {
         string path;
+        public string id_cabang;
         public New()
         {
             InitializeComponent();
@@ -26,7 +27,12 @@ namespace Proyek_ACS
 
         private void New_Load(object sender, EventArgs e)
         {
-            
+            adapter = new OracleDataAdapter("select * from tipe", conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            cmb_kategori.DataSource = ds.Tables[0];
+            cmb_kategori.ValueMember = "ID_TIPE";
+            cmb_kategori.DisplayMember = "NAMA_TIPE";
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -89,7 +95,7 @@ namespace Proyek_ACS
                     adapter.Fill(dt);
 
                     tmp_kode += dt.Rows[0].ItemArray[0].ToString();
-
+                    cmd = new OracleCommand("insert into sepatu values('" + tmp_kode + "','" + txt_nama.Text + "','" + txt_hargabeli + "','" + txt_hargajual + "','1','" + cmb_kategori.SelectedValue.ToString() + "','"+id_cabang+"')", conn) ;
 
                     ////autogen path file secara dinamis
                     //string newPath = AppDomain.CurrentDomain.BaseDirectory + "picture";
