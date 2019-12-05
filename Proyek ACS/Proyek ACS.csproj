@@ -147,6 +147,12 @@
     <Compile Include="Master Login.Designer.cs">
       <DependentUpon>Master Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mutasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mutasi.Designer.cs">
+      <DependentUpon>Mutasi.cs</DependentUpon>
+    </Compile>
     <Compile Include="New.cs">
       <SubType>Form</SubType>
     </Compile>
