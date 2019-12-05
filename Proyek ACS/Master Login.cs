@@ -78,5 +78,10 @@ namespace Proyek_ACS
             this.Master_Login_Load(this, e);
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

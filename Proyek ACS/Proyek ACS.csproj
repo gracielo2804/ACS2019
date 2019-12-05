@@ -105,6 +105,12 @@
     <Compile Include="Delete_Barang.Designer.cs">
       <DependentUpon>Delete_Barang.cs</DependentUpon>
     </Compile>
+    <Compile Include="delete_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delete_user.Designer.cs">
+      <DependentUpon>delete_user.cs</DependentUpon>
+    </Compile>
     <Compile Include="Edit Sub.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Delete_Barang.resx">
       <DependentUpon>Delete_Barang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delete_user.resx">
+      <DependentUpon>delete_user.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Edit Sub.resx">
       <DependentUpon>Edit Sub.cs</DependentUpon>
