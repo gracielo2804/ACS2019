@@ -62,6 +62,16 @@ namespace Proyek_ACS
             conn.Close();
         }
 
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void Update_Load(object sender, EventArgs e)
         {
             conn.Open();

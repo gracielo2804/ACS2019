@@ -244,6 +244,9 @@
     <EmbeddedResource Include="Master Login.resx">
       <DependentUpon>Master Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mutasi.resx">
+      <DependentUpon>Mutasi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="New.resx">
       <DependentUpon>New.cs</DependentUpon>
     </EmbeddedResource>
