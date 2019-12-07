@@ -27,19 +27,20 @@ namespace Proyek_ACS
         }
 
         public void load_data() {
+            conn.Close();
             conn.Open();
+            adapter = new OracleDataAdapter("select u.username , u.nama_user , u.password , jab.nama_jabatan from user_ u , jabatan jab where u.id_jabatan=jab.id_jabatan", conn);
+            DataSet ds1 = new DataSet();
+            adapter.Fill(ds1);
+            dataGridView2.DataSource = ds1.Tables[0];
             adapter = new OracleDataAdapter("select nama_user from user_", conn);
             DataSet ds = new DataSet();
             adapter.Fill(ds);
             comboBox1.DataSource = ds.Tables[0];
             comboBox1.DisplayMember = "nama_user";
+           
             conn.Close();
-            conn.Open();
-            adapter = new OracleDataAdapter("select u.username , u.nama_user , u.password , jab.nama_jabatan from user_ u , jabatan jab", conn);
-            DataSet ds1 = new DataSet();
-            adapter.Fill(ds1);
-            dataGridView2.DataSource = ds1.Tables[0];
-            conn.Close();
+            
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -51,16 +52,41 @@ namespace Proyek_ACS
             else
             {
                 groupBox2.Enabled = true;
-                dataGridView2.Rows.Add(comboBox1.SelectedItem , label3.Text , label4.Text , label6.Text);
+                if (dataGridView1.RowCount > 0)
+                {
+                    bool cekuser = true;
+                    for (int i = 0; i < dataGridView1.RowCount; i++)
+                    {
+                        if (comboBox1.Text == dataGridView1.Rows[i].Cells[0].Value.ToString())
+                        {
+                            MessageBox.Show("User sudah ada didalam list");
+                            cekuser = false;
+
+                        }                        
+                    }
+                    if (cekuser)
+                    {
+                        dataGridView1.Rows.Add(comboBox1.Text, label3.Text, label4.Text, label6.Text);
+                    }
+                }
+                else if (dataGridView1.RowCount==0)
+                {
+                    dataGridView1.Rows.Add(comboBox1.Text, label3.Text, label4.Text, label6.Text);
+                }                                                
             }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = comboBox1.SelectedIndex;
-            label3.Text = dataGridView2.Rows[index].Cells[0].Value.ToString();
-            label4.Text = dataGridView2.Rows[index].Cells[2].Value.ToString();
-            label6.Text = dataGridView2.Rows[index].Cells[3].Value.ToString();
+            if (index>-1)
+            {
+                label3.Text = dataGridView2.Rows[index].Cells[0].Value.ToString();
+                label4.Text = dataGridView2.Rows[index].Cells[2].Value.ToString();
+                label6.Text = dataGridView2.Rows[index].Cells[3].Value.ToString();
+            }
+
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -73,7 +99,27 @@ namespace Proyek_ACS
             DialogResult dialogResult = MessageBox.Show("Confirmation", "Are you sure to delete all the data ?", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                //do something
+                conn.Close();
+                conn.Open();
+                OracleTransaction trans = conn.BeginTransaction();
+                try
+                {
+                    for (int i = 0; i < dataGridView1.RowCount; i++)
+                    {
+                        string username = dataGridView1.Rows[i].Cells[1].Value.ToString();
+                        cmd = new OracleCommand("update user_ set status_user=0 where username='" + username + "'", conn);
+                        cmd.ExecuteNonQuery();
+                    }
+                    trans.Commit();
+                    MessageBox.Show("Berhasil Delete user yang telah dipilih");
+                    this.Close();
+
+                }
+                catch (Exception)
+                {
+                    trans.Rollback();
+                    MessageBox.Show("Terjadi Kesalahan Delete Dibatalkan");
+                }                
             }
             else if (dialogResult == DialogResult.No)
             {

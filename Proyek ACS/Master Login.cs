@@ -25,7 +25,7 @@ namespace Proyek_ACS
 
         private void Master_Login_Load(object sender, EventArgs e)
         {
-            adapter = new OracleDataAdapter("select u.USERNAME,u.NAMA_USER,j.Nama_Jabatan from user_ u,JABATAN j where u.ID_Jabatan=j.ID_Jabatan and j.id_jabatan<3", conn);
+            adapter = new OracleDataAdapter("select u.USERNAME,u.NAMA_USER,j.Nama_Jabatan,case when u.status_user=1 then 'Aktif' when u.status_user=0 then 'Tidak Aktif' end case from user_ u,JABATAN j where u.ID_Jabatan=j.ID_Jabatan and j.id_jabatan<3", conn);
             DataSet ds = new DataSet();
             adapter.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0];
@@ -81,7 +81,11 @@ namespace Proyek_ACS
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            delete_user form_delete = new delete_user();
+            this.Hide();
+            form_delete.ShowDialog();
+            this.Show();
+            Master_Login_Load(this, e);
         }
 
         private void button1_Click_1(object sender, EventArgs e)
