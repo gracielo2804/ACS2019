@@ -184,5 +184,13 @@ namespace Proyek_ACS
             }
             conn.Close();
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Mutasi m = new Mutasi();
+            this.Hide();
+            m.ShowDialog();
+            this.Show();
+        }
     }
 }

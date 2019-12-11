@@ -30,29 +30,34 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Status_Lbl = new System.Windows.Forms.Label();
+            this.Market_Lbl = new System.Windows.Forms.Label();
+            this.Nama_Lbl = new System.Windows.Forms.Label();
+            this.LookBtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.Left_Lbl = new System.Windows.Forms.Label();
+            this.In_Lbl = new System.Windows.Forms.Label();
+            this.Out_lbl = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cmb_id = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Main = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_back = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DetailBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Main)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,10 +75,11 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.DetailBtn);
+            this.groupBox1.Controls.Add(this.Status_Lbl);
+            this.groupBox1.Controls.Add(this.Market_Lbl);
+            this.groupBox1.Controls.Add(this.Nama_Lbl);
+            this.groupBox1.Controls.Add(this.LookBtn);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -86,47 +92,48 @@
             this.groupBox1.TabIndex = 90;
             this.groupBox1.TabStop = false;
             // 
-            // label11
+            // Status_Lbl
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(138, 108);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(17, 21);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "-";
+            this.Status_Lbl.AutoSize = true;
+            this.Status_Lbl.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Status_Lbl.Location = new System.Drawing.Point(138, 108);
+            this.Status_Lbl.Name = "Status_Lbl";
+            this.Status_Lbl.Size = new System.Drawing.Size(17, 21);
+            this.Status_Lbl.TabIndex = 9;
+            this.Status_Lbl.Text = "-";
             // 
-            // label10
+            // Market_Lbl
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(139, 80);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(17, 21);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "-";
+            this.Market_Lbl.AutoSize = true;
+            this.Market_Lbl.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Market_Lbl.Location = new System.Drawing.Point(139, 80);
+            this.Market_Lbl.Name = "Market_Lbl";
+            this.Market_Lbl.Size = new System.Drawing.Size(17, 21);
+            this.Market_Lbl.TabIndex = 8;
+            this.Market_Lbl.Text = "-";
             // 
-            // label9
+            // Nama_Lbl
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(139, 50);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(17, 21);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "-";
+            this.Nama_Lbl.AutoSize = true;
+            this.Nama_Lbl.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nama_Lbl.Location = new System.Drawing.Point(139, 50);
+            this.Nama_Lbl.Name = "Nama_Lbl";
+            this.Nama_Lbl.Size = new System.Drawing.Size(17, 21);
+            this.Nama_Lbl.TabIndex = 7;
+            this.Nama_Lbl.Text = "-";
             // 
-            // button1
+            // LookBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button1.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(142, 154);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 38);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Look ";
-            this.button1.UseVisualStyleBackColor = false;
+            this.LookBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.LookBtn.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LookBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LookBtn.Location = new System.Drawing.Point(142, 154);
+            this.LookBtn.Name = "LookBtn";
+            this.LookBtn.Size = new System.Drawing.Size(131, 38);
+            this.LookBtn.TabIndex = 6;
+            this.LookBtn.Text = "Look ";
+            this.LookBtn.UseVisualStyleBackColor = false;
+            this.LookBtn.Click += new System.EventHandler(this.LookBtn_Click);
             // 
             // label8
             // 
@@ -161,9 +168,9 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.Left_Lbl);
+            this.groupBox2.Controls.Add(this.In_Lbl);
+            this.groupBox2.Controls.Add(this.Out_lbl);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
@@ -174,36 +181,38 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
-            // label15
+            // Left_Lbl
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(73, 116);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(17, 21);
-            this.label15.TabIndex = 12;
-            this.label15.Text = "-";
+            this.Left_Lbl.AutoSize = true;
+            this.Left_Lbl.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Left_Lbl.ForeColor = System.Drawing.Color.Black;
+            this.Left_Lbl.Location = new System.Drawing.Point(73, 116);
+            this.Left_Lbl.Name = "Left_Lbl";
+            this.Left_Lbl.Size = new System.Drawing.Size(15, 20);
+            this.Left_Lbl.TabIndex = 12;
+            this.Left_Lbl.Text = "-";
             // 
-            // label13
+            // In_Lbl
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(70, 46);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(17, 21);
-            this.label13.TabIndex = 10;
-            this.label13.Text = "-";
+            this.In_Lbl.AutoSize = true;
+            this.In_Lbl.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.In_Lbl.ForeColor = System.Drawing.Color.OliveDrab;
+            this.In_Lbl.Location = new System.Drawing.Point(70, 46);
+            this.In_Lbl.Name = "In_Lbl";
+            this.In_Lbl.Size = new System.Drawing.Size(15, 20);
+            this.In_Lbl.TabIndex = 10;
+            this.In_Lbl.Text = "-";
             // 
-            // label14
+            // Out_lbl
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(68, 80);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(17, 21);
-            this.label14.TabIndex = 11;
-            this.label14.Text = "-";
+            this.Out_lbl.AutoSize = true;
+            this.Out_lbl.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Out_lbl.ForeColor = System.Drawing.Color.Red;
+            this.Out_lbl.Location = new System.Drawing.Point(68, 80);
+            this.Out_lbl.Name = "Out_lbl";
+            this.Out_lbl.Size = new System.Drawing.Size(15, 20);
+            this.Out_lbl.TabIndex = 11;
+            this.Out_lbl.Text = "-";
             // 
             // label12
             // 
@@ -251,7 +260,7 @@
             this.cmb_id.FormattingEnabled = true;
             this.cmb_id.Location = new System.Drawing.Point(138, 17);
             this.cmb_id.Name = "cmb_id";
-            this.cmb_id.Size = new System.Drawing.Size(121, 24);
+            this.cmb_id.Size = new System.Drawing.Size(147, 24);
             this.cmb_id.TabIndex = 1;
             // 
             // label2
@@ -264,16 +273,25 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "ID Item : ";
             // 
-            // dataGridView1
+            // Main
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightBlue;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 306);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(690, 260);
-            this.dataGridView1.TabIndex = 91;
+            this.Main.AllowUserToAddRows = false;
+            this.Main.AllowUserToDeleteRows = false;
+            this.Main.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Main.BackgroundColor = System.Drawing.Color.LightBlue;
+            this.Main.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Main.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column4,
+            this.Column2,
+            this.Column3});
+            this.Main.Location = new System.Drawing.Point(12, 306);
+            this.Main.Name = "Main";
+            this.Main.ReadOnly = true;
+            this.Main.RowHeadersWidth = 51;
+            this.Main.RowTemplate.Height = 24;
+            this.Main.Size = new System.Drawing.Size(690, 260);
+            this.Main.TabIndex = 91;
             // 
             // pictureBox2
             // 
@@ -295,6 +313,44 @@
             this.btn_back.TabIndex = 92;
             this.btn_back.Text = "Back";
             this.btn_back.UseVisualStyleBackColor = false;
+            this.btn_back.Click += new System.EventHandler(this.Btn_back_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Tanggal";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Nama";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Jenis Aktifitas";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Jumlah";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // DetailBtn
+            // 
+            this.DetailBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.DetailBtn.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DetailBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DetailBtn.Location = new System.Drawing.Point(279, 154);
+            this.DetailBtn.Name = "DetailBtn";
+            this.DetailBtn.Size = new System.Drawing.Size(131, 38);
+            this.DetailBtn.TabIndex = 10;
+            this.DetailBtn.Text = "Detail";
+            this.DetailBtn.UseVisualStyleBackColor = false;
+            this.DetailBtn.Click += new System.EventHandler(this.DetailBtn_Click);
             // 
             // Mutasi
             // 
@@ -302,7 +358,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 578);
             this.Controls.Add(this.btn_back);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Main);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
@@ -313,7 +369,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Main)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -331,18 +387,23 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmb_id;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView Main;
+        private System.Windows.Forms.Label Status_Lbl;
+        private System.Windows.Forms.Label Market_Lbl;
+        private System.Windows.Forms.Label Nama_Lbl;
+        private System.Windows.Forms.Button LookBtn;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label Left_Lbl;
+        private System.Windows.Forms.Label In_Lbl;
+        private System.Windows.Forms.Label Out_lbl;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btn_back;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Button DetailBtn;
     }
 }

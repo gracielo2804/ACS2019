@@ -45,6 +45,7 @@
             this.TahunLbl = new System.Windows.Forms.Label();
             this.TahunLblBulanan = new System.Windows.Forms.Label();
             this.BulanLbl = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -250,11 +251,22 @@
             this.BulanLbl.Text = "Bulan :";
             this.BulanLbl.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(318, 51);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Mutasi";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1732, 953);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.BulanLbl);
             this.Controls.Add(this.TahunLblBulanan);
             this.Controls.Add(this.TahunLbl);
@@ -302,5 +314,6 @@
         private System.Windows.Forms.Label TahunLbl;
         private System.Windows.Forms.Label TahunLblBulanan;
         private System.Windows.Forms.Label BulanLbl;
+        private System.Windows.Forms.Button button1;
     }
 }
