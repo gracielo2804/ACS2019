@@ -128,16 +128,16 @@ namespace Proyek_ACS
             {
                 Date.Visible = false;
                 DailyLbl.Visible = false;
-                TglAwal.Visible = false;
-                Main.Visible = false;
-                TglAwalLbl.Visible = false;
-                TglAkhirLbl.Visible = false;
                 BulanCmb.Visible = false;
                 BulanLbl.Visible = false;
                 TahunCmbBulanan.Visible = false;
                 TahunLblBulanan.Visible = false;
                 TahunCmbTahunan.Visible = false;
                 TahunLbl.Visible = false;
+                TglAkhir.Visible = false;
+                TglAwal.Visible = false;
+                TglAwalLbl.Visible = false;
+                TglAkhirLbl.Visible = false;
                 if (cmb_pilihan.SelectedIndex == 0)
                 {
                     Date.Visible = true;

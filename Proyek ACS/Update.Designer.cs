@@ -32,7 +32,6 @@
             this.btn_add = new System.Windows.Forms.Button();
             this.txt_hargajual = new System.Windows.Forms.TextBox();
             this.txt_hargabeli = new System.Windows.Forms.TextBox();
-            this.nud_ukuran = new System.Windows.Forms.NumericUpDown();
             this.nud_jumlah = new System.Windows.Forms.NumericUpDown();
             this.txt_warna = new System.Windows.Forms.TextBox();
             this.txx_nama = new System.Windows.Forms.TextBox();
@@ -49,10 +48,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmb_kategori = new System.Windows.Forms.ComboBox();
             this.rb_penambahan = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rb_pengurangan = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_ukuran)).BeginInit();
+            this.jumlah = new System.Windows.Forms.Label();
+            this.Size = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nud_jumlah)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +61,7 @@
             this.button1.BackColor = System.Drawing.Color.Salmon;
             this.button1.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(470, 610);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(92, 55);
             this.button1.TabIndex = 37;
@@ -75,7 +74,7 @@
             this.btn_add.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btn_add.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.Location = new System.Drawing.Point(331, 610);
-            this.btn_add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_add.Margin = new System.Windows.Forms.Padding(4);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(92, 55);
             this.btn_add.TabIndex = 36;
@@ -86,7 +85,7 @@
             // txt_hargajual
             // 
             this.txt_hargajual.Location = new System.Drawing.Point(241, 523);
-            this.txt_hargajual.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_hargajual.Margin = new System.Windows.Forms.Padding(4);
             this.txt_hargajual.Name = "txt_hargajual";
             this.txt_hargajual.Size = new System.Drawing.Size(217, 22);
             this.txt_hargajual.TabIndex = 34;
@@ -94,23 +93,15 @@
             // txt_hargabeli
             // 
             this.txt_hargabeli.Location = new System.Drawing.Point(241, 464);
-            this.txt_hargabeli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_hargabeli.Margin = new System.Windows.Forms.Padding(4);
             this.txt_hargabeli.Name = "txt_hargabeli";
             this.txt_hargabeli.Size = new System.Drawing.Size(217, 22);
             this.txt_hargabeli.TabIndex = 33;
             // 
-            // nud_ukuran
-            // 
-            this.nud_ukuran.Location = new System.Drawing.Point(241, 424);
-            this.nud_ukuran.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.nud_ukuran.Name = "nud_ukuran";
-            this.nud_ukuran.Size = new System.Drawing.Size(68, 22);
-            this.nud_ukuran.TabIndex = 32;
-            // 
             // nud_jumlah
             // 
             this.nud_jumlah.Location = new System.Drawing.Point(241, 383);
-            this.nud_jumlah.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nud_jumlah.Margin = new System.Windows.Forms.Padding(4);
             this.nud_jumlah.Name = "nud_jumlah";
             this.nud_jumlah.Size = new System.Drawing.Size(68, 22);
             this.nud_jumlah.TabIndex = 31;
@@ -118,7 +109,7 @@
             // txt_warna
             // 
             this.txt_warna.Location = new System.Drawing.Point(241, 277);
-            this.txt_warna.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_warna.Margin = new System.Windows.Forms.Padding(4);
             this.txt_warna.Name = "txt_warna";
             this.txt_warna.Size = new System.Drawing.Size(217, 22);
             this.txt_warna.TabIndex = 30;
@@ -126,7 +117,7 @@
             // txx_nama
             // 
             this.txx_nama.Location = new System.Drawing.Point(241, 222);
-            this.txx_nama.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txx_nama.Margin = new System.Windows.Forms.Padding(4);
             this.txx_nama.Name = "txx_nama";
             this.txx_nama.Size = new System.Drawing.Size(217, 22);
             this.txx_nama.TabIndex = 29;
@@ -234,7 +225,7 @@
             // 
             this.pictureBox2.Image = global::Proyek_ACS.Properties.Resources.logokecil;
             this.pictureBox2.Location = new System.Drawing.Point(49, 15);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(67, 62);
             this.pictureBox2.TabIndex = 40;
@@ -256,7 +247,7 @@
             this.cmb_kategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_kategori.FormattingEnabled = true;
             this.cmb_kategori.Location = new System.Drawing.Point(241, 167);
-            this.cmb_kategori.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmb_kategori.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_kategori.Name = "cmb_kategori";
             this.cmb_kategori.Size = new System.Drawing.Size(217, 24);
             this.cmb_kategori.TabIndex = 28;
@@ -273,18 +264,18 @@
             this.rb_penambahan.Text = "Penambahan";
             this.rb_penambahan.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rb_pengurangan
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(368, 326);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(129, 23);
-            this.radioButton1.TabIndex = 42;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Pengurangan";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.rb_pengurangan.AutoSize = true;
+            this.rb_pengurangan.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_pengurangan.Location = new System.Drawing.Point(368, 326);
+            this.rb_pengurangan.Name = "rb_pengurangan";
+            this.rb_pengurangan.Size = new System.Drawing.Size(129, 23);
+            this.rb_pengurangan.TabIndex = 42;
+            this.rb_pengurangan.TabStop = true;
+            this.rb_pengurangan.Text = "Pengurangan";
+            this.rb_pengurangan.UseVisualStyleBackColor = true;
+            this.rb_pengurangan.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // label7
             // 
@@ -297,24 +288,35 @@
             this.label7.Text = "Stok Saat Ini : ";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // label12
+            // jumlah
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(359, 357);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(63, 19);
-            this.label12.TabIndex = 44;
-            this.label12.Text = "label12";
+            this.jumlah.AutoSize = true;
+            this.jumlah.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jumlah.Location = new System.Drawing.Point(359, 357);
+            this.jumlah.Name = "jumlah";
+            this.jumlah.Size = new System.Drawing.Size(63, 19);
+            this.jumlah.TabIndex = 44;
+            this.jumlah.Text = "label12";
+            // 
+            // Size
+            // 
+            this.Size.AutoSize = true;
+            this.Size.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Size.Location = new System.Drawing.Point(241, 424);
+            this.Size.Name = "Size";
+            this.Size.Size = new System.Drawing.Size(63, 19);
+            this.Size.TabIndex = 45;
+            this.Size.Text = "label12";
             // 
             // Update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 687);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.Size);
+            this.Controls.Add(this.jumlah);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rb_pengurangan);
             this.Controls.Add(this.rb_penambahan);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label11);
@@ -323,7 +325,6 @@
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.txt_hargajual);
             this.Controls.Add(this.txt_hargabeli);
-            this.Controls.Add(this.nud_ukuran);
             this.Controls.Add(this.nud_jumlah);
             this.Controls.Add(this.txt_warna);
             this.Controls.Add(this.txx_nama);
@@ -336,12 +337,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Update";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update";
             this.Load += new System.EventHandler(this.Update_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nud_ukuran)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_jumlah)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -366,14 +366,14 @@
         public System.Windows.Forms.ComboBox cmb_kategori;
         public System.Windows.Forms.TextBox txt_hargajual;
         public System.Windows.Forms.TextBox txt_hargabeli;
-        public System.Windows.Forms.NumericUpDown nud_ukuran;
         public System.Windows.Forms.NumericUpDown nud_jumlah;
         public System.Windows.Forms.TextBox txt_warna;
         public System.Windows.Forms.TextBox txx_nama;
         public System.Windows.Forms.Label label11;
         private System.Windows.Forms.RadioButton rb_penambahan;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rb_pengurangan;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label12;
+        public System.Windows.Forms.Label jumlah;
+        public System.Windows.Forms.Label Size;
     }
 }

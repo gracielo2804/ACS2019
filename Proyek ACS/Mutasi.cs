@@ -16,5 +16,10 @@ namespace Proyek_ACS
         {
             InitializeComponent();
         }
+
+        private void Mutasi_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

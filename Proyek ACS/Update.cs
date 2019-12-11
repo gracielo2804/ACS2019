@@ -22,6 +22,7 @@ namespace Proyek_ACS
         public string warna,nama,Username;
         public int ukuran;
         string kodelog;
+        int temp;
         public Update()
         {
             InitializeComponent();
@@ -31,35 +32,48 @@ namespace Proyek_ACS
 
         private void Btn_add_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            try
+            if (Convert.ToInt32(jumlah.Text) < nud_jumlah.Value && rb_pengurangan.Checked==true)
             {
-                cmd = new OracleCommand($"UPDATE Sepatu SET NAMA_SEPATU ='{txx_nama.Text}', harga_jual='{txt_hargajual.Text}', harga_beli='{txt_hargajual.Text}', ID_Tipe ='{cmb_kategori.SelectedValue.ToString()}' where ID_Sepatu ='{label11.Text}'", conn);
-                cmd.ExecuteNonQuery();
-                cmd = new OracleCommand($"Update Stok set UKURAN_SEPATU ='{nud_ukuran.Value}', JUMLAH_SEPATU ='{nud_jumlah.Value}', WARNA_SEPATU = '{txt_warna.Text}' where ID_SEPATU ='{label11.Text}'and WARNA_SEPATU ='{warna}'and UKURAN_SEPATU = '{ukuran}' ", conn);
-                cmd.ExecuteNonQuery();
-                cmd = new OracleCommand($"Update LOG_SEPATU set ukuran_sepatu ='{nud_ukuran.Value}', warna_sepatu ='{txt_warna.Text}' where id_sepatu = '{label11.Text}'", conn);
-                cmd.ExecuteNonQuery();
-                if (this.Awal > nud_jumlah.Value)
-                {
-                    int Kurang = Awal - Convert.ToInt32(nud_jumlah.Value);
-                    cmd = new OracleCommand($"Insert into log_Sepatu values ('{kodelog}',1,0,'{label11.Text}',{Kurang}','{nud_ukuran.Value}','{txt_warna.Text}',To_Date(sysdate,'DD/MM/YYYY'),'{this.Username}')", conn);
-                    cmd.ExecuteNonQuery();
-                }
-                else if (this.Awal < nud_jumlah.Value)
-                {
-                    int tambah = Convert.ToInt32(nud_jumlah.Value) - Awal;
-                    cmd = new OracleCommand($"Insert into log_Sepatu values ('{kodelog}',1,1,'{label11.Text}',{tambah}','{nud_ukuran.Value}','{txt_warna.Text}',To_Date(sysdate,'DD/MM/YYYY'),'{this.Username}')", conn);
-                    cmd.ExecuteNonQuery();
-                }
-                MessageBox.Show("Barang dengan code " + label11.Text + " Berhasil Di Edit");
-                this.Close();
+                MessageBox.Show("Jumlah stock yang ingin dikurangi lebih besar daripada jumlah stock yang ada");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                if (rb_pengurangan.Checked==true || rb_penambahan.Checked==true)
+                {
+                    conn.Open();
+                    try
+                    {
+                        temp = 0;
+                        cmd = new OracleCommand($"UPDATE Sepatu SET NAMA_SEPATU ='{txx_nama.Text}', harga_jual='{txt_hargajual.Text}', harga_beli='{txt_hargajual.Text}', ID_Tipe ='{cmb_kategori.SelectedValue.ToString()}' where ID_Sepatu ='{label11.Text}'", conn);
+                        cmd.ExecuteNonQuery();
+                        if (rb_penambahan.Checked == true)
+                        {
+                            temp = Convert.ToInt32(jumlah.Text) + Convert.ToInt32(nud_jumlah.Value.ToString());
+                            cmd = new OracleCommand($"Update Stok set JUMLAH_SEPATU ='{temp}', WARNA_SEPATU = '{txt_warna.Text}' where ID_SEPATU ='{label11.Text}'and WARNA_SEPATU ='{warna}'and UKURAN_SEPATU = '{Size.Text}' ", conn);
+                            cmd.ExecuteNonQuery();
+                            cmd = new OracleCommand($"insert into log_Sepatu values('{kodelog}',1,1,'{label11.Text}','{nud_jumlah.Value.ToString()}','{Size.Text}','{txt_warna.Text}',sysdate,'{Username}')",conn);
+                            cmd.ExecuteNonQuery();
+                        }
+                        else if (rb_pengurangan.Checked == true)
+                        {
+                            temp = Convert.ToInt32(jumlah.Text) - Convert.ToInt32(nud_jumlah.Value.ToString());
+                            cmd = new OracleCommand($"Update Stok set JUMLAH_SEPATU ='{temp}', WARNA_SEPATU = '{txt_warna.Text}' where ID_SEPATU ='{label11.Text}'and WARNA_SEPATU ='{warna}'and UKURAN_SEPATU = '{Size.Text}' ", conn);
+                            cmd.ExecuteNonQuery();
+                            cmd = new OracleCommand($"insert into log_Sepatu values('{kodelog}',1,0,'{label11.Text}','{nud_jumlah.Value.ToString()}','{Size.Text}','{txt_warna.Text}',sysdate,'{Username}')", conn);
+                            cmd.ExecuteNonQuery();
+                        }
+                        MessageBox.Show("Barang dengan code " + label11.Text + " Berhasil Di Edit");
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    conn.Close();
+                }
+               
             }
-            conn.Close();
+            
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)

@@ -24,6 +24,7 @@ namespace Proyek_ACS
         OracleDataAdapter adapter;
         DataTable dt,dt2;
         OracleCommand cmd;
+        int index=0;
         public Inventory()
         {
             InitializeComponent();
@@ -115,37 +116,7 @@ namespace Proyek_ACS
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Update u = new Update();
-            foreach (DataRow row in dt.Rows)
-            {
-                if (dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() == row["ID Sepatu"].ToString())
-                {
-                    u.label11.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    u.txx_nama.Text = row["Nama Sepatu"].ToString();
-                    u.txt_warna.Text = row["Warna Sepatu"].ToString();
-                    u.nud_jumlah.Value = Convert.ToInt32(row["Jumlah"].ToString());
-                    u.Awal = Convert.ToInt32(row["Jumlah"].ToString());
-                    u.nama = row["Nama Sepatu"].ToString();
-                    u.ukuran = Convert.ToInt32(row["Ukuran"].ToString());
-                    u.warna = row["Warna Sepatu"].ToString();
-                    u.Username = id_user;
-                    u.nud_ukuran.Value = Convert.ToInt32(row["Ukuran"].ToString());
-                    conn.Open();
-                    cmd = new OracleCommand($"Select Harga_Jual as market,Harga_Beli as purchase from SEPATU where id_sepatu ='{row["ID Sepatu"].ToString()}'",conn);
-                    adapter = new OracleDataAdapter(cmd);
-                    dt2 = new DataTable();
-                    adapter.Fill(dt2);
-                    foreach (DataRow row2 in dt2.Rows)
-                    {
-                        u.txt_hargabeli.Text = row2["purchase"].ToString();
-                        u.txt_hargajual.Text = row2["market"].ToString();
-                    }
-                    conn.Close();
-                }
-            }
-            this.Hide();
-            u.ShowDialog();
-            this.Show();
+            index = e.RowIndex;
         }
 
         private void Inventory_FormClosing(object sender, FormClosingEventArgs e)
@@ -181,6 +152,43 @@ namespace Proyek_ACS
             Inventory_Load(this, e);
         }
 
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            if (index > -1)
+            {
+                Update u = new Update();
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (dataGridView1.Rows[index].Cells[0].Value.ToString() == row["ID Sepatu"].ToString())
+                    {
+                        u.label11.Text = dataGridView1.Rows[index].Cells[0].Value.ToString();
+                        u.txx_nama.Text = row["Nama Sepatu"].ToString();
+                        u.txt_warna.Text = row["Warna Sepatu"].ToString();
+                        u.jumlah.Text = row["Jumlah"].ToString();
+                        u.Awal = Convert.ToInt32(row["Jumlah"].ToString());
+                        u.nama = row["Nama Sepatu"].ToString();
+                        u.warna = row["Warna Sepatu"].ToString();
+                        u.Username = id_user;
+                        u.Size.Text = row["Ukuran"].ToString();
+                        conn.Open();
+                        cmd = new OracleCommand($"Select Harga_Jual as market,Harga_Beli as purchase from SEPATU where id_sepatu ='{row["ID Sepatu"].ToString()}'", conn);
+                        adapter = new OracleDataAdapter(cmd);
+                        dt2 = new DataTable();
+                        adapter.Fill(dt2);
+                        foreach (DataRow row2 in dt2.Rows)
+                        {
+                            u.txt_hargabeli.Text = row2["purchase"].ToString();
+                            u.txt_hargajual.Text = row2["market"].ToString();
+                        }
+                        conn.Close();
+                    }
+                }
+                this.Hide();
+                u.ShowDialog();
+                this.Inventory_Load(sender, e);
+                this.Show();
+            }
+        }
         private void btn_search_Click(object sender, EventArgs e)
         {
             MessageBox.Show(comboBox1.Text);
