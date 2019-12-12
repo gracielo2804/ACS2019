@@ -13,7 +13,7 @@ namespace Proyek_ACS
 {
     public partial class Mutasi : Form
     {
-        OracleConnection conn = new OracleConnection("Data Source= xe;User ID=proyek;Password=proyek");
+        public static OracleConnection conn;
         OracleDataAdapter adapter;
         OracleCommand cmd;
         DataSet ds;

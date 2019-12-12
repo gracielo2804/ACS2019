@@ -13,7 +13,7 @@ namespace Proyek_ACS
 {
     public partial class EditContact : Form
     {
-        OracleConnection conn;
+        public static OracleConnection conn;
         List<string> list_nama = new List<string>();
         List<string> list_alamat = new List<string>();
         List<string> list_id = new List<string>();
@@ -21,7 +21,6 @@ namespace Proyek_ACS
         public EditContact()
         {
             InitializeComponent();
-            conn = new OracleConnection("Data source=xe;User ID=proyek;Password=proyek");
         }
 
         private void EditContact_Load(object sender, EventArgs e)

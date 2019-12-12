@@ -13,11 +13,10 @@ namespace Proyek_ACS
 {
     public partial class add_contact : Form
     {
-        OracleConnection conn;
+        public static OracleConnection conn;
         public add_contact()
         {
-            InitializeComponent();
-            conn = new OracleConnection("Data source=xe;User ID=proyek;Password=proyek");
+            InitializeComponent();            
         }
 
         private void add_contact_Load(object sender, EventArgs e)

@@ -13,11 +13,10 @@ namespace Proyek_ACS
 {
     public partial class Form2 : Form
     {
-        OracleConnection conn;
+        public static OracleConnection conn;
         public Form2()
         {
             InitializeComponent();
-            conn = new OracleConnection("Data source=xe;User ID=proyek;Password=proyek");
         }
         
 

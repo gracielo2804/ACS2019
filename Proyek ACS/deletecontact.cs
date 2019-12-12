@@ -12,14 +12,13 @@ namespace Proyek_ACS
 {
     public partial class deletecontact : Form
     {
-        OracleConnection conn;
+        public static OracleConnection conn;
         List<string> list_nama = new List<string>();
         List<string> list_alamat = new List<string>();
         List<string> list_id = new List<string>();
         public deletecontact()
         {
-            InitializeComponent();
-            conn = new OracleConnection("Data source=xe;User ID=proyek;Password=proyek");
+            InitializeComponent();            
         }
 
         private void deletecontact_Load(object sender, EventArgs e)

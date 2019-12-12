@@ -16,8 +16,7 @@ namespace Proyek_ACS
     {
         public Report()
         {
-            InitializeComponent();
-            conn = new OracleConnection("Data source=xe;User ID=proyek;Password=proyek");
+            InitializeComponent();            
             //try
             //{
             //    conn = new OracleConnection("Data Source=" +
@@ -36,7 +35,7 @@ namespace Proyek_ACS
             //}
             this.CenterToScreen();
         }
-        OracleConnection conn;
+        public static OracleConnection conn;
         OracleDataAdapter ad;
         OracleCommand cmd;
         DataTable dt;

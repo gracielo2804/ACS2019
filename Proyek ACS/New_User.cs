@@ -15,7 +15,7 @@ namespace Proyek_ACS
     {
         public Master_Login form_MasterLogin;
         OracleDataAdapter adapter;
-        OracleConnection conn = new OracleConnection("Data source=xe;User ID=proyek;Password=proyek");
+        public static OracleConnection conn;
         OracleCommand cmd = new OracleCommand();
         OracleDataReader reader;
         public New_User()

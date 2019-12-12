@@ -21,7 +21,6 @@ namespace Proyek_ACS
         public Add_sub()
         {
             InitializeComponent();
-            conn = new OracleConnection("Data source=xe;User ID=proyek;Password=proyek");
         }
 
         private void btn_add_Click(object sender, EventArgs e)

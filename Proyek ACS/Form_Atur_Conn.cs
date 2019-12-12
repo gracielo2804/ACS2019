@@ -46,7 +46,24 @@ namespace Proyek_ACS
                 conn.Close();
                 conn.Open();
                 conn.Close();
+                add_contact.conn = conn;
                 awal.conn = conn;
+                Delete_Barang.conn = conn;
+                delete_user.conn = conn;
+                deletecontact.conn = conn;
+                deletesub.conn = conn;
+                Edit_Sub.conn = conn;
+                Edit_User.conn = conn;
+                EditContact.conn = conn;
+                Form2.conn = conn;
+                Inventory.conn = conn;
+                Master_Login.conn = conn;
+                Mutasi.conn = conn;
+                New.conn = conn;
+                New_User.conn = conn;
+                Report.conn = conn;
+                Sub_contact.conn = conn;
+
                 this.Close();
             }
             else
