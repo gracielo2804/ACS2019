@@ -56,9 +56,9 @@ namespace Proyek_ACS
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Mutasi m = new Mutasi();
+            PilihReport pr = new PilihReport();
             this.Hide();
-            m.ShowDialog();
+            pr.ShowDialog();
             this.Show();
         }
 

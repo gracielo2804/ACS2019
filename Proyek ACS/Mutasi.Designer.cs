@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.DetailBtn = new System.Windows.Forms.Button();
             this.Status_Lbl = new System.Windows.Forms.Label();
             this.Market_Lbl = new System.Windows.Forms.Label();
             this.Nama_Lbl = new System.Windows.Forms.Label();
@@ -75,7 +74,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.groupBox1.Controls.Add(this.DetailBtn);
             this.groupBox1.Controls.Add(this.Status_Lbl);
             this.groupBox1.Controls.Add(this.Market_Lbl);
             this.groupBox1.Controls.Add(this.Nama_Lbl);
@@ -91,20 +89,6 @@
             this.groupBox1.Size = new System.Drawing.Size(689, 208);
             this.groupBox1.TabIndex = 90;
             this.groupBox1.TabStop = false;
-            // 
-            // DetailBtn
-            // 
-            this.DetailBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.DetailBtn.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DetailBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DetailBtn.Location = new System.Drawing.Point(279, 154);
-            this.DetailBtn.Name = "DetailBtn";
-            this.DetailBtn.Size = new System.Drawing.Size(131, 38);
-            this.DetailBtn.TabIndex = 10;
-            this.DetailBtn.Text = "Detail";
-            this.DetailBtn.UseVisualStyleBackColor = false;
-            this.DetailBtn.Visible = false;
-            this.DetailBtn.Click += new System.EventHandler(this.DetailBtn_Click);
             // 
             // Status_Lbl
             // 
@@ -405,6 +389,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.Button DetailBtn;
     }
 }

@@ -41,7 +41,6 @@ namespace Proyek_ACS
         DataTable dt;
         CrystalReport1 Daily;
         CrystalReport2 Custom;
-        public string KodeBarang;
         
         private void Btn_buat_Click(object sender, EventArgs e)
         {
@@ -91,15 +90,23 @@ namespace Proyek_ACS
                 if (jenis=="Daily")
                 {
                     Daily = new CrystalReport1();
+                    OracleDataAdapter ad = new OracleDataAdapter("Select * from tab", conn);
+                    DataSet temp = new DataSet();
+                    ad.Fill(temp);
+                    Daily.SetDataSource(temp);
                     Daily.SetDatabaseLogon("proyek", "proyek");
-                    Daily.SetParameterValue("Daily", Date.Value);
-                    Daily.SetParameterValue("ID", this.KodeBarang);
+                    Daily.SetParameterValue("Daily", Date.Value.ToString("dd/MM/yyyy"));
+                    Daily.SetParameterValue("ID", "SP");
                     Main.ReportSource = Daily;
                 }
                 else 
                 {
                     Custom = new CrystalReport2();
-                    Custom.SetParameterValue("ID", this.KodeBarang);
+                    OracleDataAdapter ad = new OracleDataAdapter("Select * from tab",conn);
+                    DataSet temp = new DataSet();
+                    ad.Fill(temp);
+                    Custom.SetDataSource(temp);
+                    Custom.SetParameterValue("ID", "SP");
                     TextObject txt;
                     txt = Custom.ReportDefinition.ReportObjects["BulanTxt"] as TextObject;
                     Custom.SetDatabaseLogon("proyek", "proyek");

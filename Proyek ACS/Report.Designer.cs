@@ -46,8 +46,6 @@
             this.TahunLblBulanan = new System.Windows.Forms.Label();
             this.BulanLbl = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.NamaLbl = new System.Windows.Forms.Label();
             this.btn_back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,7 +71,7 @@
             "Bulanan",
             "Tahunan",
             "Custom"});
-            this.cmb_pilihan.Location = new System.Drawing.Point(23, 262);
+            this.cmb_pilihan.Location = new System.Drawing.Point(23, 167);
             this.cmb_pilihan.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_pilihan.Name = "cmb_pilihan";
             this.cmb_pilihan.Size = new System.Drawing.Size(243, 30);
@@ -83,7 +81,7 @@
             // btn_buat
             // 
             this.btn_buat.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_buat.Location = new System.Drawing.Point(275, 254);
+            this.btn_buat.Location = new System.Drawing.Point(275, 159);
             this.btn_buat.Margin = new System.Windows.Forms.Padding(4);
             this.btn_buat.Name = "btn_buat";
             this.btn_buat.Size = new System.Drawing.Size(136, 45);
@@ -126,7 +124,7 @@
             // 
             // Date
             // 
-            this.Date.Location = new System.Drawing.Point(27, 331);
+            this.Date.Location = new System.Drawing.Point(27, 236);
             this.Date.Name = "Date";
             this.Date.Size = new System.Drawing.Size(243, 22);
             this.Date.TabIndex = 9;
@@ -136,7 +134,7 @@
             // 
             this.DailyLbl.AutoSize = true;
             this.DailyLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DailyLbl.Location = new System.Drawing.Point(23, 308);
+            this.DailyLbl.Location = new System.Drawing.Point(23, 213);
             this.DailyLbl.Name = "DailyLbl";
             this.DailyLbl.Size = new System.Drawing.Size(130, 20);
             this.DailyLbl.TabIndex = 10;
@@ -145,7 +143,7 @@
             // 
             // TglAwal
             // 
-            this.TglAwal.Location = new System.Drawing.Point(27, 331);
+            this.TglAwal.Location = new System.Drawing.Point(27, 236);
             this.TglAwal.Name = "TglAwal";
             this.TglAwal.Size = new System.Drawing.Size(243, 22);
             this.TglAwal.TabIndex = 11;
@@ -153,7 +151,7 @@
             // 
             // TglAkhir
             // 
-            this.TglAkhir.Location = new System.Drawing.Point(27, 379);
+            this.TglAkhir.Location = new System.Drawing.Point(27, 284);
             this.TglAkhir.Name = "TglAkhir";
             this.TglAkhir.Size = new System.Drawing.Size(243, 22);
             this.TglAkhir.TabIndex = 12;
@@ -163,7 +161,7 @@
             // 
             this.TglAwalLbl.AutoSize = true;
             this.TglAwalLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TglAwalLbl.Location = new System.Drawing.Point(23, 308);
+            this.TglAwalLbl.Location = new System.Drawing.Point(23, 213);
             this.TglAwalLbl.Name = "TglAwalLbl";
             this.TglAwalLbl.Size = new System.Drawing.Size(133, 20);
             this.TglAwalLbl.TabIndex = 13;
@@ -174,7 +172,7 @@
             // 
             this.TglAkhirLbl.AutoSize = true;
             this.TglAkhirLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TglAkhirLbl.Location = new System.Drawing.Point(23, 356);
+            this.TglAkhirLbl.Location = new System.Drawing.Point(23, 261);
             this.TglAkhirLbl.Name = "TglAkhirLbl";
             this.TglAkhirLbl.Size = new System.Drawing.Size(136, 20);
             this.TglAkhirLbl.TabIndex = 14;
@@ -198,7 +196,7 @@
             "October",
             "November",
             "December"});
-            this.BulanCmb.Location = new System.Drawing.Point(27, 331);
+            this.BulanCmb.Location = new System.Drawing.Point(27, 236);
             this.BulanCmb.Name = "BulanCmb";
             this.BulanCmb.Size = new System.Drawing.Size(191, 24);
             this.BulanCmb.TabIndex = 15;
@@ -208,7 +206,7 @@
             // 
             this.TahunCmbBulanan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TahunCmbBulanan.FormattingEnabled = true;
-            this.TahunCmbBulanan.Location = new System.Drawing.Point(27, 388);
+            this.TahunCmbBulanan.Location = new System.Drawing.Point(27, 293);
             this.TahunCmbBulanan.Name = "TahunCmbBulanan";
             this.TahunCmbBulanan.Size = new System.Drawing.Size(191, 24);
             this.TahunCmbBulanan.TabIndex = 16;
@@ -218,7 +216,7 @@
             // 
             this.TahunCmbTahunan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TahunCmbTahunan.FormattingEnabled = true;
-            this.TahunCmbTahunan.Location = new System.Drawing.Point(27, 331);
+            this.TahunCmbTahunan.Location = new System.Drawing.Point(27, 236);
             this.TahunCmbTahunan.Name = "TahunCmbTahunan";
             this.TahunCmbTahunan.Size = new System.Drawing.Size(191, 24);
             this.TahunCmbTahunan.TabIndex = 17;
@@ -228,7 +226,7 @@
             // 
             this.TahunLbl.AutoSize = true;
             this.TahunLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TahunLbl.Location = new System.Drawing.Point(23, 308);
+            this.TahunLbl.Location = new System.Drawing.Point(23, 213);
             this.TahunLbl.Name = "TahunLbl";
             this.TahunLbl.Size = new System.Drawing.Size(72, 20);
             this.TahunLbl.TabIndex = 18;
@@ -239,7 +237,7 @@
             // 
             this.TahunLblBulanan.AutoSize = true;
             this.TahunLblBulanan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TahunLblBulanan.Location = new System.Drawing.Point(23, 365);
+            this.TahunLblBulanan.Location = new System.Drawing.Point(23, 270);
             this.TahunLblBulanan.Name = "TahunLblBulanan";
             this.TahunLblBulanan.Size = new System.Drawing.Size(72, 20);
             this.TahunLblBulanan.TabIndex = 19;
@@ -250,7 +248,7 @@
             // 
             this.BulanLbl.AutoSize = true;
             this.BulanLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BulanLbl.Location = new System.Drawing.Point(23, 308);
+            this.BulanLbl.Location = new System.Drawing.Point(23, 213);
             this.BulanLbl.Name = "BulanLbl";
             this.BulanLbl.Size = new System.Drawing.Size(69, 20);
             this.BulanLbl.TabIndex = 20;
@@ -261,33 +259,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 236);
+            this.label2.Location = new System.Drawing.Point(19, 141);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(151, 22);
             this.label2.TabIndex = 21;
             this.label2.Text = "Jenis Laporan :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(19, 156);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 22);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Nama Sepatu :";
-            // 
-            // NamaLbl
-            // 
-            this.NamaLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NamaLbl.Location = new System.Drawing.Point(166, 156);
-            this.NamaLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.NamaLbl.Name = "NamaLbl";
-            this.NamaLbl.Size = new System.Drawing.Size(278, 74);
-            this.NamaLbl.TabIndex = 23;
-            this.NamaLbl.Text = "-";
             // 
             // btn_back
             // 
@@ -307,8 +284,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1609, 953);
             this.Controls.Add(this.btn_back);
-            this.Controls.Add(this.NamaLbl);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BulanLbl);
             this.Controls.Add(this.TahunLblBulanan);
@@ -358,8 +333,6 @@
         private System.Windows.Forms.Label TahunLblBulanan;
         private System.Windows.Forms.Label BulanLbl;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.Label NamaLbl;
         private System.Windows.Forms.Button btn_back;
     }
 }
