@@ -76,9 +76,9 @@ namespace Proyek_ACS
             }     
         }
 
-        private void Sub_contact_FormClosing(object sender, FormClosingEventArgs e)
+        private void BackBtn_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

@@ -62,5 +62,10 @@ namespace Proyek_ACS
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void Btn_cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

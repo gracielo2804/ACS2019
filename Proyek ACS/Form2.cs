@@ -83,5 +83,10 @@ namespace Proyek_ACS
             dct.ShowDialog();
             this.Show();
         }
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
