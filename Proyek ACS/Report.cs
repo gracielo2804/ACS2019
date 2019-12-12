@@ -99,7 +99,7 @@ namespace Proyek_ACS
                 else 
                 {
                     Custom = new CrystalReport2();
-                    Daily.SetParameterValue("ID", this.KodeBarang);
+                    Custom.SetParameterValue("ID", this.KodeBarang);
                     TextObject txt;
                     txt = Custom.ReportDefinition.ReportObjects["BulanTxt"] as TextObject;
                     Custom.SetDatabaseLogon("proyek", "proyek");
