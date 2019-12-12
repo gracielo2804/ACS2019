@@ -156,7 +156,6 @@ namespace Proyek_ACS
             if (index > -1)
             {
                 Update u = new Update();
-                u.conn = conn;
                 foreach (DataRow row in dt.Rows)
                 {
                     if (dataGridView1.Rows[index].Cells[0].Value.ToString() == row["ID Sepatu"].ToString())
