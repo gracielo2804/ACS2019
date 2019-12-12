@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.DetailBtn = new System.Windows.Forms.Button();
             this.Status_Lbl = new System.Windows.Forms.Label();
             this.Market_Lbl = new System.Windows.Forms.Label();
             this.Nama_Lbl = new System.Windows.Forms.Label();
@@ -48,13 +49,12 @@
             this.cmb_id = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Main = new System.Windows.Forms.DataGridView();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btn_back = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DetailBtn = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btn_back = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Main)).BeginInit();
@@ -91,6 +91,20 @@
             this.groupBox1.Size = new System.Drawing.Size(689, 208);
             this.groupBox1.TabIndex = 90;
             this.groupBox1.TabStop = false;
+            // 
+            // DetailBtn
+            // 
+            this.DetailBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.DetailBtn.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DetailBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DetailBtn.Location = new System.Drawing.Point(279, 154);
+            this.DetailBtn.Name = "DetailBtn";
+            this.DetailBtn.Size = new System.Drawing.Size(131, 38);
+            this.DetailBtn.TabIndex = 10;
+            this.DetailBtn.Text = "Detail";
+            this.DetailBtn.UseVisualStyleBackColor = false;
+            this.DetailBtn.Visible = false;
+            this.DetailBtn.Click += new System.EventHandler(this.DetailBtn_Click);
             // 
             // Status_Lbl
             // 
@@ -293,28 +307,6 @@
             this.Main.Size = new System.Drawing.Size(690, 260);
             this.Main.TabIndex = 91;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Proyek_ACS.Properties.Resources.logokecil;
-            this.pictureBox2.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(67, 62);
-            this.pictureBox2.TabIndex = 51;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btn_back
-            // 
-            this.btn_back.BackColor = System.Drawing.Color.Tan;
-            this.btn_back.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_back.Location = new System.Drawing.Point(622, 21);
-            this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(80, 34);
-            this.btn_back.TabIndex = 92;
-            this.btn_back.Text = "Back";
-            this.btn_back.UseVisualStyleBackColor = false;
-            this.btn_back.Click += new System.EventHandler(this.Btn_back_Click);
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "Tanggal";
@@ -339,18 +331,27 @@
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
-            // DetailBtn
+            // pictureBox2
             // 
-            this.DetailBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.DetailBtn.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DetailBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DetailBtn.Location = new System.Drawing.Point(279, 154);
-            this.DetailBtn.Name = "DetailBtn";
-            this.DetailBtn.Size = new System.Drawing.Size(131, 38);
-            this.DetailBtn.TabIndex = 10;
-            this.DetailBtn.Text = "Detail";
-            this.DetailBtn.UseVisualStyleBackColor = false;
-            this.DetailBtn.Click += new System.EventHandler(this.DetailBtn_Click);
+            this.pictureBox2.Image = global::Proyek_ACS.Properties.Resources.logokecil;
+            this.pictureBox2.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(67, 62);
+            this.pictureBox2.TabIndex = 51;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btn_back
+            // 
+            this.btn_back.BackColor = System.Drawing.Color.Tan;
+            this.btn_back.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_back.Location = new System.Drawing.Point(622, 21);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(80, 34);
+            this.btn_back.TabIndex = 92;
+            this.btn_back.Text = "Back";
+            this.btn_back.UseVisualStyleBackColor = false;
+            this.btn_back.Click += new System.EventHandler(this.Btn_back_Click);
             // 
             // Mutasi
             // 

@@ -54,7 +54,12 @@ namespace Proyek_ACS
 
         private void DetailBtn_Click(object sender, EventArgs e)
         {
-
+            Report r = new Report();
+            r.NamaLbl.Text = this.Nama_Lbl.Text;
+            r.KodeBarang = this.cmb_id.SelectedValue.ToString();
+            this.Hide();
+            r.ShowDialog();
+            this.Show();
         }
 
         private void LookBtn_Click(object sender, EventArgs e)
@@ -104,6 +109,14 @@ namespace Proyek_ACS
                         jenis = "Pengurangan";
                     }
                     Main.Rows.Add(Convert.ToDateTime(row["TANGGAL_LOG"].ToString()).ToShortDateString(), row["USERNAME"].ToString(), jenis, row["JUMLAH_SEPATU"].ToString());
+                }
+                if (Main.Rows.Count > 0)
+                {
+                    DetailBtn.Visible = true;
+                }
+                else
+                {
+                    DetailBtn.Visible = false;
                 }
                 In_Lbl.Text = masuk.ToString();
                 Out_lbl.Text = keluar.ToString();

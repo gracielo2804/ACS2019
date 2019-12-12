@@ -71,6 +71,10 @@ namespace Proyek_ACS
                     }
                     conn.Close();
                 }
+                else
+                {
+                    MessageBox.Show("Mohon memilih salah satu jenis perubahan Stock");
+                }
                
             }
             

@@ -26,6 +26,7 @@ namespace Proyek_ACS
         DataTable dt;
         CrystalReport1 Daily;
         CrystalReport2 Custom;
+        public string KodeBarang;
         
         private void Btn_buat_Click(object sender, EventArgs e)
         {
@@ -77,25 +78,27 @@ namespace Proyek_ACS
                     Daily = new CrystalReport1();
                     Daily.SetDatabaseLogon("proyek", "proyek");
                     Daily.SetParameterValue("Daily", Date.Value);
+                    Daily.SetParameterValue("ID", this.KodeBarang);
                     Main.ReportSource = Daily;
                 }
                 else 
                 {
                     Custom = new CrystalReport2();
+                    Daily.SetParameterValue("ID", this.KodeBarang);
                     TextObject txt;
                     txt = Custom.ReportDefinition.ReportObjects["BulanTxt"] as TextObject;
                     Custom.SetDatabaseLogon("proyek", "proyek");
                     if (jenis == "Custom")
                     {
-                        Custom.SetParameterValue("Tgl_Awal", TglAwal.Value);
-                        Custom.SetParameterValue("Tgl_Akhir", TglAkhir.Value);
+                        Custom.SetParameterValue("Tgl_Awal", TglAwal.Value.ToString("dd/MM/yyyy"));
+                        Custom.SetParameterValue("Tgl_Akhir", TglAkhir.Value.ToString("dd/MM/yyyy"));
                         Custom.SetParameterValue("Jenis", "Custom");
                         txt.Text = "";
                     }
                     else if (jenis== "Monthly")
                     {
                         string a = "1/" + BulanCmb.SelectedItem.ToString()+"/"+ TahunCmbBulanan.SelectedItem.ToString().Substring(2, 2);
-                        Custom.SetParameterValue("Tgl_awal", Convert.ToDateTime(a));
+                        Custom.SetParameterValue("Tgl_awal", Convert.ToDateTime(a).ToString("dd/MM/yyyy"));
                         cmd = new OracleCommand($"Select last_day('{a}') from dual",conn);
                         ad = new OracleDataAdapter(cmd);
                         DataSet ds = new DataSet();
@@ -191,6 +194,11 @@ namespace Proyek_ACS
             this.Hide();
             m.ShowDialog();
             this.Show();
+        }
+
+        private void Btn_back_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
