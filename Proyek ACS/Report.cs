@@ -18,6 +18,22 @@ namespace Proyek_ACS
         {
             InitializeComponent();
             conn = new OracleConnection("Data source=xe;User ID=proyek;Password=proyek");
+            //try
+            //{
+            //    conn = new OracleConnection("Data Source=" +
+            //        "(DESCRIPTION=" +
+            //        "(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)" +
+            //        "(HOST=LOCALHOST)(PORT=1521)))" +
+            //        "(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=XE)));" +
+            //        "user id=proyek;password=proyek");
+            //    conn.Open();
+            //    MessageBox.Show("Berhasil");
+            //    conn.Close();
+            //}
+            //catch (OracleException e)
+            //{
+            //    MessageBox.Show(e.Message);
+            //}
             this.CenterToScreen();
         }
         OracleConnection conn;
