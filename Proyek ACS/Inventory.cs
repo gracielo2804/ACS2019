@@ -53,7 +53,7 @@ namespace Proyek_ACS
             }
             if (cekkaryawan)
             {
-                adapter = new OracleDataAdapter("select * from cabang where id_cabang in (select id_cabang from user_ where username='"+id_user+"')", conn);
+                adapter = new OracleDataAdapter("select * from cabang where id_cabang in (select id_cabang from user_cabang where username='"+id_user+"')", conn);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
                 comboBox1.DataSource = ds.Tables[0];
