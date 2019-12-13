@@ -54,7 +54,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(596, 47);
+            this.label1.Location = new System.Drawing.Point(517, 50);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(764, 62);
@@ -117,7 +117,7 @@
             this.Main.ShowLogo = false;
             this.Main.ShowParameterPanelButton = false;
             this.Main.ShowZoomButton = false;
-            this.Main.Size = new System.Drawing.Size(1114, 814);
+            this.Main.Size = new System.Drawing.Size(853, 582);
             this.Main.TabIndex = 8;
             this.Main.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             this.Main.Visible = false;
@@ -270,7 +270,7 @@
             // 
             this.btn_back.BackColor = System.Drawing.Color.Tan;
             this.btn_back.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_back.Location = new System.Drawing.Point(1517, 15);
+            this.btn_back.Location = new System.Drawing.Point(1236, 13);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(80, 34);
             this.btn_back.TabIndex = 93;
@@ -282,7 +282,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1609, 953);
+            this.ClientSize = new System.Drawing.Size(1348, 721);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BulanLbl);

@@ -129,12 +129,6 @@
     <Compile Include="EditContact.Designer.cs">
       <DependentUpon>EditContact.cs</DependentUpon>
     </Compile>
-    <Compile Include="PilihReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PilihReport.Designer.cs">
-      <DependentUpon>PilihReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,9 +240,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditContact.resx">
       <DependentUpon>EditContact.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PilihReport.resx">
-      <DependentUpon>PilihReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>

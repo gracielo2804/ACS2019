@@ -188,6 +188,15 @@ namespace Proyek_ACS
                 this.Show();
             }
         }
+
+        private void MutasiBtn_Click(object sender, EventArgs e)
+        {
+            Mutasi m = new Mutasi();
+            this.Hide();
+            m.ShowDialog();
+            this.Show();
+        }
+
         private void btn_search_Click(object sender, EventArgs e)
         {
             MessageBox.Show(comboBox1.Text);

@@ -17,22 +17,6 @@ namespace Proyek_ACS
         public Report()
         {
             InitializeComponent();            
-            //try
-            //{
-            //    conn = new OracleConnection("Data Source=" +
-            //        "(DESCRIPTION=" +
-            //        "(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)" +
-            //        "(HOST=LOCALHOST)(PORT=1521)))" +
-            //        "(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=XE)));" +
-            //        "user id=proyek;password=proyek");
-            //    conn.Open();
-            //    MessageBox.Show("Berhasil");
-            //    conn.Close();
-            //}
-            //catch (OracleException e)
-            //{
-            //    MessageBox.Show(e.Message);
-            //}
             this.CenterToScreen();
         }
         public static OracleConnection conn;
@@ -90,10 +74,6 @@ namespace Proyek_ACS
                 if (jenis=="Daily")
                 {
                     Daily = new CrystalReport1();
-                    OracleDataAdapter ad = new OracleDataAdapter("Select * from tab", conn);
-                    DataSet temp = new DataSet();
-                    ad.Fill(temp);
-                    Daily.SetDataSource(temp);
                     Daily.SetDatabaseLogon("proyek", "proyek");
                     Daily.SetParameterValue("Daily", Date.Value.ToString("dd/MM/yyyy"));
                     Daily.SetParameterValue("ID", "SP");
@@ -102,10 +82,6 @@ namespace Proyek_ACS
                 else 
                 {
                     Custom = new CrystalReport2();
-                    OracleDataAdapter ad = new OracleDataAdapter("Select * from tab",conn);
-                    DataSet temp = new DataSet();
-                    ad.Fill(temp);
-                    Custom.SetDataSource(temp);
                     Custom.SetParameterValue("ID", "SP");
                     TextObject txt;
                     txt = Custom.ReportDefinition.ReportObjects["BulanTxt"] as TextObject;

@@ -56,9 +56,9 @@ namespace Proyek_ACS
 
         private void button3_Click(object sender, EventArgs e)
         {
-            PilihReport pr = new PilihReport();
+            Report r = new Report();
             this.Hide();
-            pr.ShowDialog();
+            r.ShowDialog();
             this.Show();
         }
 
