@@ -129,11 +129,23 @@
     <Compile Include="EditContact.Designer.cs">
       <DependentUpon>EditContact.cs</DependentUpon>
     </Compile>
+    <Compile Include="PilihReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PilihReport.Designer.cs">
+      <DependentUpon>PilihReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Atur_Conn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Atur_Conn.Designer.cs">
+      <DependentUpon>Form_Atur_Conn.cs</DependentUpon>
     </Compile>
     <Compile Include="Inventory.cs">
       <SubType>Form</SubType>
@@ -235,8 +247,14 @@
     <EmbeddedResource Include="EditContact.resx">
       <DependentUpon>EditContact.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PilihReport.resx">
+      <DependentUpon>PilihReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Atur_Conn.resx">
+      <DependentUpon>Form_Atur_Conn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>

@@ -14,7 +14,7 @@ namespace Proyek_ACS
     public partial class Master_Login : Form
     {
         public Pilih form_pilih;
-        OracleConnection conn = new OracleConnection("Data Source= xe;User ID=proyek;Password=proyek");
+        public static OracleConnection conn;
         OracleDataAdapter adapter;
         OracleCommand cmd;
         string iduser;

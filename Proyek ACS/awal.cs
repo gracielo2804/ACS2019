@@ -16,10 +16,9 @@ namespace Proyek_ACS
         public awal()
         {
             InitializeComponent();
-            dbconn.ConnectionString = "Data Source=xe;User ID=proyek;Password=proyek";
         }
         public string user = "";
-        public static OracleConnection dbconn = new OracleConnection();
+        public static OracleConnection conn;
         DataSet ds;
 
         private void btn_login_Click(object sender, EventArgs e)
@@ -82,18 +81,23 @@ namespace Proyek_ACS
 
         private void awal_Load(object sender, EventArgs e)
         {
+            Form_Atur_Conn f = new Form_Atur_Conn();
+            f.a = this;
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
             datalogin();
         }
         public void datalogin()
         {
-            dbconn.Open();
+            conn.Open();
             string query = "select USERNAME as name,PASSWORD as pass, ID_Jabatan as jabatan,Nama_user as nama from user_";
-            OracleCommand cmd = new OracleCommand(query, dbconn);
+            OracleCommand cmd = new OracleCommand(query, conn);
             OracleDataAdapter da = new OracleDataAdapter();
             da.SelectCommand = cmd;
             ds = new DataSet();
             da.Fill(ds);
-            dbconn.Close();
+            conn.Close();
         }
     }
 }

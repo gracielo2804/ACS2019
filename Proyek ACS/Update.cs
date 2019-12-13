@@ -17,7 +17,7 @@ namespace Proyek_ACS
         OracleDataAdapter ad;
         DataTable dt;
         DataSet ds;
-        OracleConnection conn;
+        public static OracleConnection conn;
         public int Awal;
         public string warna,nama,Username;
         public int ukuran;
@@ -26,8 +26,7 @@ namespace Proyek_ACS
         public Update()
         {
             InitializeComponent();
-            conn = new OracleConnection("Data source=xe;User ID=proyek;Password=proyek");
-            conn.Close();
+            conn = Form_Atur_Conn.conn;
         }
 
         private void Btn_add_Click(object sender, EventArgs e)

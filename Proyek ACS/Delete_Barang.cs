@@ -14,14 +14,13 @@ namespace Proyek_ACS
     
     public partial class Delete_Barang : Form
     {
-        OracleConnection conn;
+        public static OracleConnection conn;
         OracleDataAdapter adapter;
         OracleCommand cmd;
         public string id_perusahaan;
         public Delete_Barang()
         {
             InitializeComponent();
-            conn = new OracleConnection("Data source=xe;User ID=proyek;Password=proyek");
         }
 
         private void Delete_Barang_Load(object sender, EventArgs e)

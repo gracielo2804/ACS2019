@@ -13,11 +13,10 @@ namespace Proyek_ACS
 {
     public partial class Form2 : Form
     {
-        OracleConnection conn;
+        public static OracleConnection conn;
         public Form2()
         {
             InitializeComponent();
-            conn = new OracleConnection("Data source=xe;User ID=proyek;Password=proyek");
         }
         
 
@@ -83,6 +82,11 @@ namespace Proyek_ACS
             this.Hide();
             dct.ShowDialog();
             this.Show();
+        }
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

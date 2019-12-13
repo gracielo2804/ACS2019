@@ -24,13 +24,13 @@ namespace Proyek_ACS
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Report r = new Report();
+            PilihReport pr = new PilihReport();
             this.Hide();
-            r.ShowDialog();
+            pr.ShowDialog();
             this.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+            private void button1_Click(object sender, EventArgs e)
         {
             Form2 f2 = new Form2();
             this.Hide();

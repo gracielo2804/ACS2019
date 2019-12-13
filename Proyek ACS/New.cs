@@ -24,7 +24,7 @@ namespace Proyek_ACS
             InitializeComponent();
         }
         public Inventory form_inventory;
-        OracleConnection conn = new OracleConnection("Data Source=xe;User ID=proyek;Password=proyek");        
+        public static OracleConnection conn;  
         OracleCommand cmd = new OracleCommand();
 
         private void New_Load(object sender, EventArgs e)

@@ -50,19 +50,20 @@
             this.btn_cancel.BackColor = System.Drawing.Color.Bisque;
             this.btn_cancel.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancel.Location = new System.Drawing.Point(350, 286);
-            this.btn_cancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_cancel.Margin = new System.Windows.Forms.Padding(4);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(101, 50);
             this.btn_cancel.TabIndex = 95;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = false;
+            this.btn_cancel.Click += new System.EventHandler(this.Btn_cancel_Click);
             // 
             // btn_add
             // 
             this.btn_add.BackColor = System.Drawing.Color.PeachPuff;
             this.btn_add.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.Location = new System.Drawing.Point(135, 286);
-            this.btn_add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_add.Margin = new System.Windows.Forms.Padding(4);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(101, 50);
             this.btn_add.TabIndex = 94;
@@ -128,7 +129,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(263, 133);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(228, 22);
             this.textBox1.TabIndex = 87;
@@ -147,7 +148,7 @@
             // txt_telp
             // 
             this.txt_telp.Location = new System.Drawing.Point(263, 212);
-            this.txt_telp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_telp.Margin = new System.Windows.Forms.Padding(4);
             this.txt_telp.Name = "txt_telp";
             this.txt_telp.Size = new System.Drawing.Size(228, 22);
             this.txt_telp.TabIndex = 85;
@@ -155,7 +156,7 @@
             // txt_email
             // 
             this.txt_email.Location = new System.Drawing.Point(263, 173);
-            this.txt_email.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_email.Margin = new System.Windows.Forms.Padding(4);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(228, 22);
             this.txt_email.TabIndex = 84;
@@ -186,7 +187,7 @@
             // 
             this.pictureBox2.Image = global::Proyek_ACS.Properties.Resources.logokecil;
             this.pictureBox2.Location = new System.Drawing.Point(17, 26);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(55, 45);
             this.pictureBox2.TabIndex = 93;

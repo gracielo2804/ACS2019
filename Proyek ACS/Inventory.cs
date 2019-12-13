@@ -15,7 +15,7 @@ namespace Proyek_ACS
     public partial class Inventory : Form
     {
         public string parent="";
-        OracleConnection conn;
+        public static OracleConnection conn;
         public awal form_awal;
         public Pilih form_pilih;
         public pilimanager form_pilih_manager;
@@ -27,8 +27,7 @@ namespace Proyek_ACS
         int index=0;
         public Inventory()
         {
-            InitializeComponent();
-            conn = new OracleConnection("Data source=xe;User ID=proyek;Password=proyek");
+            InitializeComponent();            
         }
         bool cekkaryawan = true;
         private void Inventory_Load(object sender, EventArgs e)

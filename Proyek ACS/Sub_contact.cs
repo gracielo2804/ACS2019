@@ -13,14 +13,13 @@ namespace Proyek_ACS
 {
     public partial class Sub_contact : Form
     {
-        OracleConnection conn;
+        public static OracleConnection conn;
         public string id_supplier;
 
         public Sub_contact()
         {
             InitializeComponent();
-
-            conn = new OracleConnection("Data source=xe;User ID=proyek;Password=proyek");
+           
         }
 
         private void Sub_contact_Load(object sender, EventArgs e)
@@ -77,9 +76,9 @@ namespace Proyek_ACS
             }     
         }
 
-        private void Sub_contact_FormClosing(object sender, FormClosingEventArgs e)
+        private void BackBtn_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Proyek_ACS
         {
             InitializeComponent();
         }
-        OracleConnection conn = new OracleConnection("Data Source= xe;User ID=proyek;Password=proyek");
+        public static OracleConnection conn;
         OracleDataAdapter adapter;
         OracleCommand cmd;
 

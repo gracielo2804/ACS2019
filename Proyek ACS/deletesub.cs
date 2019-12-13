@@ -15,10 +15,10 @@ namespace Proyek_ACS
     {
         public deletesub()
         {
-            conn = new OracleConnection("Data source=xe;User ID=proyek;Password=proyek");
+            
             InitializeComponent();
         }
-        OracleConnection conn;
+        public static OracleConnection conn;
         public string id_supplier;
         DataSet ds;
         OracleCommand cmd = new OracleCommand();

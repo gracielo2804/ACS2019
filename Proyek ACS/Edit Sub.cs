@@ -15,7 +15,7 @@ namespace Proyek_ACS
 
     public partial class Edit_Sub : Form
     {
-        OracleConnection conn;
+        public static OracleConnection conn;
         public string id_supplier;
         public string sales_name;
         public string comp_name;
@@ -23,7 +23,6 @@ namespace Proyek_ACS
         public Edit_Sub()
         {
             InitializeComponent();
-            conn = new OracleConnection("Data source=xe;User ID=proyek;Password=proyek");
         }
 
         private void Edit_Sub_Load(object sender, EventArgs e)
