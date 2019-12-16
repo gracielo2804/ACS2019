@@ -16,104 +16,110 @@ namespace Proyek_ACS
     {
         public Report()
         {
-            InitializeComponent();            
+            InitializeComponent();
             this.CenterToScreen();
         }
         public static OracleConnection conn;
         OracleDataAdapter ad;
         OracleCommand cmd;
         DataTable dt;
-        CrystalReport1 Daily;
-        CrystalReport2 Custom;
-        
+        CrystalReport2 cry;
+
         private void Btn_buat_Click(object sender, EventArgs e)
         {
-            if (cmb_pilihan.SelectedIndex == 0)
+            if (CabangCmb.SelectedIndex > -1)
             {
-                LoadData("Daily");
+                if (cmb_pilihan.SelectedIndex == 0)
+                {
+                    LoadData("Daily");
+                }
+                else if (cmb_pilihan.SelectedIndex == 1)
+                {
+                    if (BulanCmb.SelectedIndex > -1 && TahunCmbBulanan.SelectedIndex > -1)
+                    {
+                        LoadData("Monthly");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Mohon Memilih bulan dan tahun terlebih dahulu");
+                    }
+                }
+                else if (cmb_pilihan.SelectedIndex == 2)
+                {
+                    if (TahunCmbTahunan.SelectedIndex > -1)
+                    {
+                        LoadData("Yearly");
+                    }
+                    else
+                    {
+                        MessageBox.Show("mohom memilih tahun terlebih dahulu");
+                    }
+                }
+                else if (cmb_pilihan.SelectedIndex == 3)
+                {
+                    if (TglAwal.Value < TglAkhir.Value)
+                    {
+                        LoadData("Custom");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Input Tanggal Salah");
+                    }
+                }
             }
-            else if (cmb_pilihan.SelectedIndex == 1)
+            else
             {
-                if (BulanCmb.SelectedIndex >-1 && TahunCmbBulanan.SelectedIndex > -1)
-                {
-                    LoadData("Monthly");
-                }
-                else
-                {
-                    MessageBox.Show("Mohon Memilih bulan dan tahun terlebih dahulu");
-                }
+                MessageBox.Show("Harap Memilih Cabang");
             }
-            else if (cmb_pilihan.SelectedIndex == 2)
-            {
-                if (TahunCmbTahunan.SelectedIndex>-1)
-                {
-                    LoadData("Yearly");
-                }
-                else
-                {
-                    MessageBox.Show("mohom memilih tahun terlebih dahulu");
-                }
-            }
-            else if (cmb_pilihan.SelectedIndex==3)
-            {
-                if (TglAwal.Value < TglAkhir.Value)
-                {
-                    LoadData("Custom");
-                }
-                else
-                {
-                    MessageBox.Show("Input Tanggal Salah");
-                }
-            }
+
         }
         public void LoadData(string jenis)
         {
             conn.Open();
             try
             {
-                if (jenis=="Daily")
+                cry = new CrystalReport2();
+                cry.SetParameterValue("ID", "SP");
+                TextObject txt;
+                TextObject Cabang;
+                Cabang = cry.ReportDefinition.ReportObjects["Cabang"] as TextObject;
+                txt = cry.ReportDefinition.ReportObjects["BulanTxt"] as TextObject;
+                cry.SetDatabaseLogon("proyek", "proyek");
+                if (jenis == "Custom")
                 {
-                    Daily = new CrystalReport1();
-                    Daily.SetDatabaseLogon("proyek", "proyek");
-                    Daily.SetParameterValue("Daily", Date.Value.ToString("dd/MM/yyyy"));
-                    Daily.SetParameterValue("ID", "SP");
-                    Main.ReportSource = Daily;
+                    cry.SetParameterValue("Tgl_Awal", TglAwal.Value.ToString("dd/MM/yyyy"));
+                    cry.SetParameterValue("Tgl_Akhir", TglAkhir.Value.ToString("dd/MM/yyyy"));
+                    cry.SetParameterValue("Jenis", "cry");
+                    txt.Text = TglAwal.Value.ToString("dd/MM/yyyy") + " - " + TglAkhir.Value.ToString("dd/MM/yyyy");
                 }
-                else 
+                else if (jenis == "Monthly")
                 {
-                    Custom = new CrystalReport2();
-                    Custom.SetParameterValue("ID", "SP");
-                    TextObject txt;
-                    txt = Custom.ReportDefinition.ReportObjects["BulanTxt"] as TextObject;
-                    Custom.SetDatabaseLogon("proyek", "proyek");
-                    if (jenis == "Custom")
-                    {
-                        Custom.SetParameterValue("Tgl_Awal", TglAwal.Value.ToString("dd/MM/yyyy"));
-                        Custom.SetParameterValue("Tgl_Akhir", TglAkhir.Value.ToString("dd/MM/yyyy"));
-                        Custom.SetParameterValue("Jenis", "Custom");
-                        txt.Text = "";
-                    }
-                    else if (jenis== "Monthly")
-                    {
-                        string a = "1/" + BulanCmb.SelectedItem.ToString()+"/"+ TahunCmbBulanan.SelectedItem.ToString().Substring(2, 2);
-                        Custom.SetParameterValue("Tgl_awal", Convert.ToDateTime(a).ToString("dd/MM/yyyy"));
-                        cmd = new OracleCommand($"Select last_day('{a}') from dual",conn);
-                        ad = new OracleDataAdapter(cmd);
-                        DataSet ds = new DataSet();
-                        ad.Fill(ds);
-                        Custom.SetParameterValue("Tgl_Akhir", Convert.ToDateTime(ds.Tables[0].Rows[0][0].ToString()));
-                        Custom.SetParameterValue("Jenis", "Bulan");
-                        txt.Text = BulanCmb.SelectedItem.ToString()+" - "+ TahunCmbBulanan.SelectedItem.ToString();
-                    }
-                    else if (jenis== "Yearly")
-                    {
-                        Custom.SetParameterValue("Tgl_Awal", Convert.ToDateTime("01/January/"+TahunCmbTahunan.SelectedItem.ToString()));
-                        Custom.SetParameterValue("Tgl_Akhir", Convert.ToDateTime("31/December/" + TahunCmbTahunan.SelectedItem.ToString()));
-                        Custom.SetParameterValue("Jenis", "Tahun");
-                        txt.Text = TahunCmbTahunan.SelectedItem.ToString();
-                    }
-                    Main.ReportSource = Custom;
+                    string a = "1/" + BulanCmb.SelectedItem.ToString() + "/" + TahunCmbBulanan.SelectedItem.ToString().Substring(2, 2);
+                    cry.SetParameterValue("Tgl_awal", Convert.ToDateTime(a).ToString("dd/MM/yyyy"));
+                    cmd = new OracleCommand($"Select last_day('{a}') from dual", conn);
+                    ad = new OracleDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    ad.Fill(ds);
+                    cry.SetParameterValue("Tgl_Akhir", Convert.ToDateTime(ds.Tables[0].Rows[0][0].ToString()));
+                    cry.SetParameterValue("Jenis", "Bulan");
+                    txt.Text = BulanCmb.SelectedItem.ToString() + " - " + TahunCmbBulanan.SelectedItem.ToString();
                 }
+                else if (jenis == "Yearly")
+                {
+                    cry.SetParameterValue("Tgl_Awal", Convert.ToDateTime("01/January/" + TahunCmbTahunan.SelectedItem.ToString()));
+                    cry.SetParameterValue("Tgl_Akhir", Convert.ToDateTime("31/December/" + TahunCmbTahunan.SelectedItem.ToString()));
+                    cry.SetParameterValue("Jenis", "Tahun");
+                    txt.Text = TahunCmbTahunan.SelectedItem.ToString();
+                }
+                else if (jenis == "Daily")
+                {
+                    cry.SetParameterValue("Tgl_Awal", Date.Value.ToString("dd/MM/yyyy"));
+                    cry.SetParameterValue("Tgl_Akhir", Date.Value.ToString("dd/MM/yyyy"));
+                    cry.SetParameterValue("ID", "SP");
+                    txt.Text = Date.Value.ToString("dd/MM/yyyy");
+                }
+                Cabang.Text = "Nama Cabang : " + namaCabang();
+                Main.ReportSource = cry;
                 Main.Visible = true;
             }
             catch (Exception ex)
@@ -122,10 +128,9 @@ namespace Proyek_ACS
             }
             conn.Close();
         }
-
-        private void Cmb_pilihan_SelectedIndexChanged(object sender, EventArgs e)
+    private void Cmb_pilihan_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmb_pilihan.SelectedIndex>-1)
+            if (cmb_pilihan.SelectedIndex > -1)
             {
                 Date.Visible = false;
                 DailyLbl.Visible = false;
@@ -139,19 +144,20 @@ namespace Proyek_ACS
                 TglAwal.Visible = false;
                 TglAwalLbl.Visible = false;
                 TglAkhirLbl.Visible = false;
+                Main.Visible = false;
                 if (cmb_pilihan.SelectedIndex == 0)
                 {
                     Date.Visible = true;
                     DailyLbl.Visible = true;
                 }
-                else if (cmb_pilihan.SelectedIndex==1)
+                else if (cmb_pilihan.SelectedIndex == 1)
                 {
                     BulanCmb.Visible = true;
                     BulanLbl.Visible = true;
                     TahunCmbBulanan.Visible = true;
                     TahunLblBulanan.Visible = true;
                 }
-                else if (cmb_pilihan.SelectedIndex==2)
+                else if (cmb_pilihan.SelectedIndex == 2)
                 {
                     TahunCmbTahunan.Visible = true;
                     TahunLbl.Visible = true;
@@ -165,7 +171,7 @@ namespace Proyek_ACS
                 }
                 btn_buat.Visible = true;
             }
-            
+
         }
 
         private void Report_Load(object sender, EventArgs e)
@@ -183,20 +189,26 @@ namespace Proyek_ACS
                 TahunCmbBulanan.Items.Add(i);
                 TahunCmbTahunan.Items.Add(i);
             }
+            cmd = new OracleCommand("Select * from cabang", conn);
+            ad = new OracleDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            ad.Fill(ds);
+            CabangCmb.DataSource = ds.Tables[0];
+            CabangCmb.DisplayMember = "NAMA_CABANG";
+            CabangCmb.ValueMember = "ID_CABANG";
             conn.Close();
         }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            Mutasi m = new Mutasi();
-            this.Hide();
-            m.ShowDialog();
-            this.Show();
-        }
-
         private void Btn_back_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        public string namaCabang()
+        {
+            cmd = new OracleCommand($"Select initcap(NAMA_CABANG) from cabang where id_cabang ='{CabangCmb.SelectedValue}'", conn);
+            ad = new OracleDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            ad.Fill(ds);
+            return ds.Tables[0].Rows[0][0].ToString();
         }
     }
 }

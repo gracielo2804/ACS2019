@@ -52,6 +52,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.jumlah = new System.Windows.Forms.Label();
             this.Size = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.CatatanTxt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nud_jumlah)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +62,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Salmon;
             this.button1.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(470, 610);
+            this.button1.Location = new System.Drawing.Point(470, 653);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(92, 55);
@@ -73,7 +75,7 @@
             // 
             this.btn_add.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btn_add.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add.Location = new System.Drawing.Point(331, 610);
+            this.btn_add.Location = new System.Drawing.Point(331, 653);
             this.btn_add.Margin = new System.Windows.Forms.Padding(4);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(92, 55);
@@ -84,7 +86,7 @@
             // 
             // txt_hargajual
             // 
-            this.txt_hargajual.Location = new System.Drawing.Point(241, 523);
+            this.txt_hargajual.Location = new System.Drawing.Point(241, 452);
             this.txt_hargajual.Margin = new System.Windows.Forms.Padding(4);
             this.txt_hargajual.Name = "txt_hargajual";
             this.txt_hargajual.Size = new System.Drawing.Size(217, 22);
@@ -92,7 +94,7 @@
             // 
             // txt_hargabeli
             // 
-            this.txt_hargabeli.Location = new System.Drawing.Point(241, 464);
+            this.txt_hargabeli.Location = new System.Drawing.Point(241, 414);
             this.txt_hargabeli.Margin = new System.Windows.Forms.Padding(4);
             this.txt_hargabeli.Name = "txt_hargabeli";
             this.txt_hargabeli.Size = new System.Drawing.Size(217, 22);
@@ -100,7 +102,7 @@
             // 
             // nud_jumlah
             // 
-            this.nud_jumlah.Location = new System.Drawing.Point(241, 383);
+            this.nud_jumlah.Location = new System.Drawing.Point(241, 333);
             this.nud_jumlah.Margin = new System.Windows.Forms.Padding(4);
             this.nud_jumlah.Name = "nud_jumlah";
             this.nud_jumlah.Size = new System.Drawing.Size(68, 22);
@@ -108,7 +110,7 @@
             // 
             // txt_warna
             // 
-            this.txt_warna.Location = new System.Drawing.Point(241, 277);
+            this.txt_warna.Location = new System.Drawing.Point(241, 237);
             this.txt_warna.Margin = new System.Windows.Forms.Padding(4);
             this.txt_warna.Name = "txt_warna";
             this.txt_warna.Size = new System.Drawing.Size(217, 22);
@@ -116,7 +118,7 @@
             // 
             // txx_nama
             // 
-            this.txx_nama.Location = new System.Drawing.Point(241, 222);
+            this.txx_nama.Location = new System.Drawing.Point(241, 197);
             this.txx_nama.Margin = new System.Windows.Forms.Padding(4);
             this.txx_nama.Name = "txx_nama";
             this.txx_nama.Size = new System.Drawing.Size(217, 22);
@@ -126,7 +128,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(44, 464);
+            this.label9.Location = new System.Drawing.Point(44, 414);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(176, 23);
@@ -137,7 +139,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(67, 523);
+            this.label8.Location = new System.Drawing.Point(67, 452);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(155, 23);
@@ -148,7 +150,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(155, 424);
+            this.label6.Location = new System.Drawing.Point(155, 374);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 23);
@@ -159,7 +161,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(115, 326);
+            this.label5.Location = new System.Drawing.Point(115, 276);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 23);
@@ -170,7 +172,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(139, 274);
+            this.label4.Location = new System.Drawing.Point(145, 235);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 23);
@@ -181,7 +183,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(139, 219);
+            this.label3.Location = new System.Drawing.Point(139, 194);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 23);
@@ -203,7 +205,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(117, 121);
+            this.label10.Location = new System.Drawing.Point(117, 96);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(103, 23);
@@ -214,7 +216,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(237, 121);
+            this.label11.Location = new System.Drawing.Point(237, 96);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(81, 23);
@@ -235,7 +237,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(108, 165);
+            this.label2.Location = new System.Drawing.Point(108, 140);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 23);
@@ -246,7 +248,7 @@
             // 
             this.cmb_kategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_kategori.FormattingEnabled = true;
-            this.cmb_kategori.Location = new System.Drawing.Point(241, 167);
+            this.cmb_kategori.Location = new System.Drawing.Point(241, 142);
             this.cmb_kategori.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_kategori.Name = "cmb_kategori";
             this.cmb_kategori.Size = new System.Drawing.Size(217, 24);
@@ -256,7 +258,7 @@
             // 
             this.rb_penambahan.AutoSize = true;
             this.rb_penambahan.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb_penambahan.Location = new System.Drawing.Point(241, 326);
+            this.rb_penambahan.Location = new System.Drawing.Point(241, 276);
             this.rb_penambahan.Name = "rb_penambahan";
             this.rb_penambahan.Size = new System.Drawing.Size(127, 23);
             this.rb_penambahan.TabIndex = 41;
@@ -268,31 +270,29 @@
             // 
             this.rb_pengurangan.AutoSize = true;
             this.rb_pengurangan.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb_pengurangan.Location = new System.Drawing.Point(368, 326);
+            this.rb_pengurangan.Location = new System.Drawing.Point(368, 276);
             this.rb_pengurangan.Name = "rb_pengurangan";
             this.rb_pengurangan.Size = new System.Drawing.Size(129, 23);
             this.rb_pengurangan.TabIndex = 42;
             this.rb_pengurangan.TabStop = true;
             this.rb_pengurangan.Text = "Pengurangan";
             this.rb_pengurangan.UseVisualStyleBackColor = true;
-            this.rb_pengurangan.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(241, 357);
+            this.label7.Location = new System.Drawing.Point(241, 307);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(121, 19);
             this.label7.TabIndex = 43;
             this.label7.Text = "Stok Saat Ini : ";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // jumlah
             // 
             this.jumlah.AutoSize = true;
             this.jumlah.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jumlah.Location = new System.Drawing.Point(359, 357);
+            this.jumlah.Location = new System.Drawing.Point(359, 307);
             this.jumlah.Name = "jumlah";
             this.jumlah.Size = new System.Drawing.Size(63, 19);
             this.jumlah.TabIndex = 44;
@@ -302,17 +302,40 @@
             // 
             this.Size.AutoSize = true;
             this.Size.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Size.Location = new System.Drawing.Point(241, 424);
+            this.Size.Location = new System.Drawing.Point(241, 374);
             this.Size.Name = "Size";
             this.Size.Size = new System.Drawing.Size(63, 19);
             this.Size.TabIndex = 45;
             this.Size.Text = "label12";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(117, 495);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(102, 23);
+            this.label12.TabIndex = 46;
+            this.label12.Text = "Catatan :";
+            // 
+            // CatatanTxt
+            // 
+            this.CatatanTxt.Location = new System.Drawing.Point(241, 497);
+            this.CatatanTxt.Margin = new System.Windows.Forms.Padding(4);
+            this.CatatanTxt.MaxLength = 100;
+            this.CatatanTxt.Multiline = true;
+            this.CatatanTxt.Name = "CatatanTxt";
+            this.CatatanTxt.Size = new System.Drawing.Size(301, 124);
+            this.CatatanTxt.TabIndex = 47;
+            // 
             // Update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 687);
+            this.ClientSize = new System.Drawing.Size(575, 721);
+            this.Controls.Add(this.CatatanTxt);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.Size);
             this.Controls.Add(this.jumlah);
             this.Controls.Add(this.label7);
@@ -375,5 +398,7 @@
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.Label jumlah;
         public System.Windows.Forms.Label Size;
+        private System.Windows.Forms.Label label12;
+        public System.Windows.Forms.TextBox CatatanTxt;
     }
 }

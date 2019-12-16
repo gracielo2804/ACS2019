@@ -169,6 +169,7 @@ namespace Proyek_ACS
                         u.warna = row["Warna Sepatu"].ToString();
                         u.Username = id_user;
                         u.Size.Text = row["Ukuran"].ToString();
+                        u.KodeCabang = comboBox1.SelectedValue.ToString();
                         conn.Open();
                         cmd = new OracleCommand($"Select Harga_Jual as market,Harga_Beli as purchase from SEPATU where id_sepatu ='{row["ID Sepatu"].ToString()}'", conn);
                         adapter = new OracleDataAdapter(cmd);
@@ -191,10 +192,19 @@ namespace Proyek_ACS
 
         private void MutasiBtn_Click(object sender, EventArgs e)
         {
-            Mutasi m = new Mutasi();
-            this.Hide();
-            m.ShowDialog();
-            this.Show();
+            if (index > -1)
+            {
+                Mutasi m = new Mutasi();
+                m.ID.Text = dataGridView1.Rows[index].Cells[0].Value.ToString();
+                m.kodeCabang = comboBox1.SelectedValue.ToString();
+                m.Ukuran.Text = dataGridView1.Rows[index].Cells[4].Value.ToString();
+                m.Warna.Text = dataGridView1.Rows[index].Cells[3].Value.ToString();
+                this.Hide();
+                m.ShowDialog();
+                this.Inventory_Load(sender, e);
+                this.Show();
+            }
+           
         }
 
         private void btn_search_Click(object sender, EventArgs e)
