@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 using Oracle.DataAccess.Client;
 
 namespace Proyek_ACS
@@ -20,6 +21,8 @@ namespace Proyek_ACS
             this.CenterToScreen();
         }
         public static OracleConnection conn;
+        public static string IP;
+        public static string ID,password;
         OracleDataAdapter ad;
         OracleCommand cmd;
         DataTable dt;
@@ -80,16 +83,25 @@ namespace Proyek_ACS
             {
                 cry = new CrystalReport2();
                 cry.SetParameterValue("ID", "SP");
+                cry.SetDatabaseLogon(ID, password);
                 TextObject txt;
                 TextObject Cabang;
                 Cabang = cry.ReportDefinition.ReportObjects["Cabang"] as TextObject;
                 txt = cry.ReportDefinition.ReportObjects["BulanTxt"] as TextObject;
-                cry.SetDatabaseLogon("proyek", "proyek");
+                foreach (CrystalDecisions.CrystalReports.Engine.Table table in cry.Database.Tables)
+                {
+                    TableLogOnInfo ci = new TableLogOnInfo();
+                    ci.ConnectionInfo.DatabaseName = "";
+                    ci.ConnectionInfo.ServerName = IP;
+                    ci.ConnectionInfo.UserID = ID;
+                    ci.ConnectionInfo.Password = password;
+                    table.ApplyLogOnInfo(ci);
+                }
                 if (jenis == "Custom")
                 {
                     cry.SetParameterValue("Tgl_Awal", TglAwal.Value.ToString("dd/MM/yyyy"));
                     cry.SetParameterValue("Tgl_Akhir", TglAkhir.Value.ToString("dd/MM/yyyy"));
-                    cry.SetParameterValue("Jenis", "cry");
+                    cry.SetParameterValue("Jenis", "Custom");
                     txt.Text = TglAwal.Value.ToString("dd/MM/yyyy") + " - " + TglAkhir.Value.ToString("dd/MM/yyyy");
                 }
                 else if (jenis == "Monthly")
@@ -116,8 +128,10 @@ namespace Proyek_ACS
                     cry.SetParameterValue("Tgl_Awal", Date.Value.ToString("dd/MM/yyyy"));
                     cry.SetParameterValue("Tgl_Akhir", Date.Value.ToString("dd/MM/yyyy"));
                     cry.SetParameterValue("ID", "SP");
+                    cry.SetParameterValue("Jenis", "Daily");
                     txt.Text = Date.Value.ToString("dd/MM/yyyy");
                 }
+                cry.SetParameterValue("IDCabang",CabangCmb.SelectedValue);
                 Cabang.Text = "Nama Cabang : " + namaCabang();
                 Main.ReportSource = cry;
                 Main.Visible = true;

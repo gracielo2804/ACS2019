@@ -63,7 +63,9 @@ namespace Proyek_ACS
                 New_User.conn = conn;
                 Report.conn = conn;
                 Sub_contact.conn = conn;
-
+                Report.IP = host;
+                Report.ID = user;
+                Report.password = pass;
                 this.Close();
             }
             else

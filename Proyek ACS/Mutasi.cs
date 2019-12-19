@@ -62,7 +62,7 @@ namespace Proyek_ACS
             }
             masuk = 0;
             keluar = 0;
-            cmd = new OracleCommand($"Select * from log_sepatu where ID_SEPATU = '{ID.Text}' and ID_CABANG ='{kodeCabang}'", conn);
+            cmd = new OracleCommand($"Select * from log_sepatu where ID_SEPATU = '{ID.Text}' and ID_CABANG ='{kodeCabang}' and warna_sepatu ='{Warna.Text}' and ukuran_Sepatu = '{Convert.ToInt32(Ukuran.Text)}'", conn);
             adapter = new OracleDataAdapter(cmd);
             dt = new DataTable();
             adapter.Fill(dt);
