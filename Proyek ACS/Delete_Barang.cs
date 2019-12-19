@@ -60,5 +60,10 @@ namespace Proyek_ACS
                 Delete_Barang_Load(this, e);
             }
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -125,11 +125,9 @@ namespace Proyek_ACS
                     tmp_kode += dt.Rows[0].ItemArray[0].ToString();
                     cmd = new OracleCommand("insert into sepatu values('" + tmp_kode + "','" + txt_nama.Text + "','" + txt_hargabeli.Text + "','" + txt_hargajual.Text + "','1','" + cmb_kategori.SelectedValue.ToString() + "','"+id_cabang+"','"+cmb_supplier.SelectedValue.ToString()+"')", conn) ;
                     cmd.ExecuteNonQuery();
-                    cmd = new OracleCommand("insert into stok values('"+lbl_id.Text+"','"+nud_ukuran.Value.ToString()+"','"+nud_jumlah.Value.ToString()+"','"+txt_warna.Text+"','"+id_cabang+"')",conn);
+                    cmd = new OracleCommand($"insert into stok values('{lbl_id.Text}','{nud_ukuran.Value.ToString()}','{nud_jumlah.Value.ToString()}','{txt_warna.Text}','{id_cabang}')", conn);
                     cmd.ExecuteNonQuery();
-                    cmd = new OracleCommand("insert into log_Sepatu values('"+id_logs+"','0','1','"+lbl_id.Text+"','"+nud_jumlah.Value.ToString()+"','"+nud_ukuran.Value.ToString()+"','"+txt_warna.Text+"',To_Date(sysdate,'DD/MM/YYYY'),'"+id_user+"')",conn);
-                    cmd.ExecuteNonQuery();
-
+                    cmd = new OracleCommand($"INSERT into Log_sepatu values('{id_logs}','0','1','{lbl_id.Text}','{nud_jumlah.Value.ToString()}', '{nud_ukuran.Value.ToString()}','{txt_warna.Text}',To_Date(sysdate,'DD/MM/YYYY'),'{id_user}','{id_cabang}','Barang Baru')",conn);
                     ////autogen path file secara dinamis
                     //string newPath = AppDomain.CurrentDomain.BaseDirectory + "picture";
 
