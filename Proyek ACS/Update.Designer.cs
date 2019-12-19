@@ -54,6 +54,7 @@
             this.Size = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.CatatanTxt = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nud_jumlah)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -326,14 +327,25 @@
             this.CatatanTxt.MaxLength = 100;
             this.CatatanTxt.Multiline = true;
             this.CatatanTxt.Name = "CatatanTxt";
-            this.CatatanTxt.Size = new System.Drawing.Size(301, 124);
+            this.CatatanTxt.Size = new System.Drawing.Size(301, 92);
             this.CatatanTxt.TabIndex = 47;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(242, 593);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(127, 17);
+            this.label13.TabIndex = 48;
+            this.label13.Text = "Max 100 Character";
             // 
             // Update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 721);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.CatatanTxt);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.Size);
@@ -400,5 +412,6 @@
         public System.Windows.Forms.Label Size;
         private System.Windows.Forms.Label label12;
         public System.Windows.Forms.TextBox CatatanTxt;
+        private System.Windows.Forms.Label label13;
     }
 }
